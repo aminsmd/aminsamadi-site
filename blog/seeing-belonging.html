@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seeing Belonging - Amin Samadi</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">Amin Samadi</a>
+            <div class="nav-links">
+                <a href="../about.html">About</a>
+                <a href="index.html" class="active">Research</a>
+                <a href="../photography.html">Photography</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <article>
+                <div class="post-header">
+                    <h1>Seeing Belonging</h1>
+                    <p class="subtitle">Can AI See What Makes Students Feel They Belong?</p>
+                    <p class="meta">February 26, 2026</p>
+                </div>
+
+                <div class="post-content">
+                    <p>A teacher walks between desks, pausing to crouch beside a student's work. Another student points to the board, explaining her approach to the class. These moments—physical positioning, gesture, eye contact—are where belonging happens in math classrooms.</p>
+
+                    <p>But traditional classroom analysis misses them entirely. Audio transcription captures words, not the teacher circulating to honor a student's thinking. Not the invitation to share multiple solution paths. Not the subtle cues that tell historically marginalized students: <em>you belong here</em>.</p>
+
+                    <p>We developed a multimodal AI pipeline using Gemini 2.5 Pro to transcribe classroom videos—capturing both speech and visual context. Then we tested whether this richer picture helps identify belonging-centered instructional practices in mathematics classrooms serving primarily Black and Latino students.</p>
+
+                    <h2>Beyond Words</h2>
+
+                    <p>Our pipeline processes video through five stages: chunking, transcription, merging, format conversion, and validation. Unlike audio-only systems, it captures:</p>
+
+                    <div class="callout">
+                        <h4>What Audio Misses</h4>
+                        <p>Teacher positioning and movement, student activities and engagement, instructional materials being used, and non-verbal interactions that signal inclusion.</p>
+                    </div>
+
+                    <p>We compared our multimodal approach against three baselines: Whisper (audio-only), GPT4o-Diarize (audio with speaker identification), and Gemini-Audio (audio-focused prompting).</p>
+
+                    <h2>The Results</h2>
+
+                    <div class="finding">
+                        <p><strong>Multimodal transcription achieved the best accuracy</strong>—Word Error Rate of 0.14 with error rates below 2.5% across all categories including speaker identification and content recognition.</p>
+                    </div>
+
+                    <div class="finding">
+                        <p><strong>Visual context dramatically improved detection of belonging-centered practices.</strong> Overall precision increased from 0.79 to 0.85 (+7.6%). False positives dropped from 17.3% to 12.9%.</p>
+                    </div>
+
+                    <p>The biggest improvements came for practices that depend on non-verbal cues:</p>
+
+                    <ul>
+                        <li><strong>Honoring Multiple Ways of Knowing:</strong> +24.3% precision</li>
+                        <li><strong>Inviting Feedback on Instruction:</strong> +25.0% precision</li>
+                        <li><strong>Opportunities for Agency:</strong> +13.6% precision</li>
+                    </ul>
+
+                    <p>These are exactly the practices enacted through physical positioning, interaction with materials, and non-verbal invitation—invisible to audio-only analysis.</p>
+
+                    <h2>A Limitation Worth Noting</h2>
+
+                    <p>Under both transcription conditions, the AI failed to identify non-examples—segments where no belonging-centered practice was present. A 100% false negative rate for these cases suggests the model struggles to recognize the <em>absence</em> of inclusive practices, not just their presence.</p>
+
+                    <p>This asymmetry matters. Identifying what's missing may be just as important as identifying what's there.</p>
+
+                    <h2>Why This Matters</h2>
+
+                    <div class="takeaways">
+                        <h4>Implications</h4>
+                        <ul>
+                            <li><strong>Equity-focused research at scale.</strong> Multimodal AI enables large-scale analysis of how teachers support historically marginalized students' sense of belonging.</li>
+                            <li><strong>No additional training required.</strong> Off-the-shelf models can be deployed for classroom analysis without fine-tuning.</li>
+                            <li><strong>Teacher professional development.</strong> Detailed, automated feedback on belonging-centered practices could support teacher growth.</li>
+                            <li><strong>Privacy remains a concern.</strong> Even with face blurring, multimodal transcription may infer sensitive attributes from visual context.</li>
+                        </ul>
+                    </div>
+
+                    <h2>The Bottom Line</h2>
+
+                    <p>Belonging isn't just about what teachers say. It's about how they move through the room, whose thinking they elevate, and how they invite students into mathematical authority.</p>
+
+                    <p>For the first time, we can analyze these practices at scale—seeing what audio alone could never capture.</p>
+
+                    <p style="text-align: center; margin-top: 40px; color: var(--text-muted);">Thanks for reading!</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <span>Amin Samadi</span>
+            <div class="social-links">
+                <a href="mailto:masamadi@uci.edu">Email</a>
+                <a href="https://github.com/aminsmd" target="_blank">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=fp1tVhIAAAAJ" target="_blank">Scholar</a>
+                <a href="https://twitter.com/aminsamadi_" target="_blank">Twitter</a>
+                <a href="https://www.linkedin.com/in/aminsamadi/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
