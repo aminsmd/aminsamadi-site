@@ -3,8 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The AI That Couldn't Stop Talking - Amin Samadi</title>
+    <title>Human-AI Team Communication Analysis - Amin Samadi</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Additional styles for tables and data presentation */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+        tr:hover {
+            background: var(--bg-secondary);
+        }
+        .stat-highlight {
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .section-divider {
+            border: none;
+            border-top: 2px solid var(--border);
+            margin: 3rem 0;
+        }
+        .trend-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .trend-number {
+            background: var(--accent);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        .conversation-example {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        .conversation-example .human {
+            color: var(--text);
+        }
+        .conversation-example .ai {
+            color: var(--accent);
+        }
+        .toc {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        .toc h3 {
+            margin-top: 0;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        .toc li {
+            margin: 0.5rem 0;
+        }
+        .key-stat {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary, #6366f1));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .key-stat .number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+        }
+        .key-stat .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .methodology-note {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .conclusion-category {
+            margin-top: 2rem;
+        }
+        .conclusion-category h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -22,130 +132,1249 @@
         <div class="container">
             <article>
                 <div class="post-header">
-                    <h1>The AI That Couldn't Stop Talking</h1>
+                    <h1>Human-AI Team Communication Analysis</h1>
                     <p class="subtitle">What Happens When Your AI Teammate Responds to Everything</p>
-                    <p class="meta">March 2, 2026</p>
+                    <p class="meta">March 2026 | Full Research Report</p>
                 </div>
 
                 <div class="post-content">
-                    <p>We gave teams an AI teammate and told them it was a fellow student. The AI was designed to collaborate naturally, adapt to its teammates, and help solve a mountain rescue scenario.</p>
 
-                    <p>What actually happened was more revealing than we expected.</p>
+                    <!-- Experiment Overview -->
+                    <h2>Experiment Overview</h2>
 
-                    <p>In an experiment with 33 teams (17 human-only, 16 with an AI teammate named "Clever Lamarr"), we analyzed over 2,000 messages. The AI didn't just participate—it dominated the conversation flow in ways that fundamentally changed how humans worked together.</p>
+                    <p>This report analyzes conversational dynamics in a collaborative decision-making experiment where teams discussed a mountain rescue scenario. The experiment compared:</p>
 
-                    <h2>The Hub-and-Spoke Effect</h2>
+                    <ul>
+                        <li><strong>Control teams</strong> (17 teams): Human-only collaboration (3 humans per team)</li>
+                        <li><strong>Treatment teams</strong> (16 teams): Human-AI collaboration (2 humans + 1 AI "Clever Lamarr")</li>
+                    </ul>
 
-                    <p>Our most striking finding: the AI inserted itself into nearly every exchange.</p>
+                    <p><strong>Total messages analyzed:</strong> 2,142 (Human-Control: 874, Human-Treatment: 640, AI: 628)</p>
+
+                    <!-- Table of Contents -->
+                    <div class="toc">
+                        <h3>Contents</h3>
+                        <ul>
+                            <li><a href="#key-findings">Key Findings Summary</a></li>
+                            <li><a href="#trend1">Trend 1: AI Mediates Nearly All Team Interactions</a></li>
+                            <li><a href="#trend2">Trend 2: AI as Facilitator, Not Expert</a></li>
+                            <li><a href="#trend3">Trend 3: AI Message Consistency vs Human Variability</a></li>
+                            <li><a href="#trend4">Trend 4: AI Deflection and Vague Responses</a></li>
+                            <li><a href="#trend5">Trend 5: Human Frustration with AI Limitations</a></li>
+                            <li><a href="#trend6">Trend 6: AI Detectability Despite Concealment</a></li>
+                            <li><a href="#trend7">Trend 7: Contrast with Human-Only Teams</a></li>
+                            <li><a href="#liwc">LIWC-22 Linguistic Analysis</a></li>
+                            <li><a href="#survey">Post-Experiment Survey Analysis</a></li>
+                            <li><a href="#conclusions">Conclusions</a></li>
+                            <li><a href="#recommendations">Recommendations</a></li>
+                        </ul>
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <!-- Key Findings Summary -->
+                    <h2 id="key-findings">Key Findings Summary</h2>
+
+                    <div class="key-stat">
+                        <span class="number">5.6%</span>
+                        <span class="label">Human-to-human interaction rate when AI was present (down from 100%)</span>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Finding</th>
+                                <th>Control</th>
+                                <th>Treatment</th>
+                                <th>Significance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Human-to-human interaction rate</td>
+                                <td>100%</td>
+                                <td class="stat-highlight">5.6%</td>
+                                <td>p < 0.001 ***</td>
+                            </tr>
+                            <tr>
+                                <td>Questions asked (%)</td>
+                                <td>14.0%</td>
+                                <td>AI: 44.3%, Humans: 15.4%</td>
+                                <td>p < 0.001 ***</td>
+                            </tr>
+                            <tr>
+                                <td>Medium messages (9-15 words)</td>
+                                <td>Human: 16-20%</td>
+                                <td class="stat-highlight">AI: 54.3%</td>
+                                <td>AI unnaturally consistent</td>
+                            </tr>
+                            <tr>
+                                <td>Substantive messages (>15 words)</td>
+                                <td>Human: 24-28%</td>
+                                <td class="stat-highlight">AI: 12.1%</td>
+                                <td>AI rarely goes deep</td>
+                            </tr>
+                            <tr>
+                                <td>AI response rate</td>
+                                <td>-</td>
+                                <td class="stat-highlight">87.4%</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>LIWC-22 Highlights (114 dimensions analyzed)</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>LIWC Finding</th>
+                                <th>Human</th>
+                                <th>AI</th>
+                                <th>Effect</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Punctuation (AllPunc)</td>
+                                <td>9.96</td>
+                                <td class="stat-highlight">36.17</td>
+                                <td>AI 3.6x higher (η²=0.28)</td>
+                            </tr>
+                            <tr>
+                                <td>Adjectives</td>
+                                <td>6.70</td>
+                                <td class="stat-highlight">17.11</td>
+                                <td>AI 2.6x higher (η²=0.13)</td>
+                            </tr>
+                            <tr>
+                                <td>Authentic</td>
+                                <td>61.99</td>
+                                <td class="stat-highlight">48.35</td>
+                                <td>AI -14 points (d=-0.35)</td>
+                            </tr>
+                            <tr>
+                                <td>Conversation markers</td>
+                                <td>14.66</td>
+                                <td class="stat-highlight">3.87</td>
+                                <td>AI 74% lower (d=-0.42)</td>
+                            </tr>
+                            <tr>
+                                <td>"I" pronoun</td>
+                                <td>4.07</td>
+                                <td class="stat-highlight">1.77</td>
+                                <td>AI 57% lower (d=-0.25)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Survey Highlights (80 participants)</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Finding</th>
+                                <th>Control</th>
+                                <th>Treatment</th>
+                                <th>p</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Chose to rescue</strong></td>
+                                <td>95.8%</td>
+                                <td class="stat-highlight">75.0%</td>
+                                <td><strong>0.012*</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Felt connected to teammates</td>
+                                <td>4.65</td>
+                                <td class="stat-highlight">3.59</td>
+                                <td><strong>0.003**</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Respectful communication</td>
+                                <td>6.02</td>
+                                <td>5.19</td>
+                                <td><strong>0.006**</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Learned from each other</td>
+                                <td>5.46</td>
+                                <td>4.59</td>
+                                <td><strong>0.024*</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Would trust AI again</td>
+                                <td>-</td>
+                                <td class="stat-highlight">3.22/7</td>
+                                <td>Below neutral</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Thought had AI teammate</strong></td>
+                                <td class="stat-highlight">58%</td>
+                                <td>100% (known)</td>
+                                <td>False positive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr class="section-divider">
+
+                    <!-- Trend 1 -->
+                    <h2 id="trend1">
+                        <div class="trend-header">
+                            <span class="trend-number">1</span>
+                            <span>AI Mediates Nearly All Team Interactions</span>
+                        </div>
+                    </h2>
+
+                    <p>In treatment teams, the AI inserts itself into the conversation flow, dramatically reducing direct human-to-human communication.</p>
 
                     <div class="finding">
                         <p><strong>Human-to-human communication dropped from 100% to just 5.6%</strong> when an AI was present. Instead of talking to each other, humans started talking <em>through</em> the AI.</p>
                     </div>
 
-                    <p>The AI responded to 87.4% of human messages. In natural three-person conversations, each person responds to others about 33-50% of the time. No human dominates by responding after nearly every message—but the AI did.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Control</th>
+                                <th>Treatment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Human → Human transitions</td>
+                                <td>100%</td>
+                                <td class="stat-highlight">5.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Human → AI transitions</td>
+                                <td>0%</td>
+                                <td>44.7%</td>
+                            </tr>
+                            <tr>
+                                <td>AI → Human transitions</td>
+                                <td>0%</td>
+                                <td>43.6%</td>
+                            </tr>
+                            <tr>
+                                <td>AI → AI transitions</td>
+                                <td>0%</td>
+                                <td>5.3%</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <p>A typical treatment team exchange:</p>
+                    <p><strong>Statistical test:</strong> t = 128.61, p < 0.000001</p>
 
-                    <blockquote>
-                        [Human] Quirky: climber's age<br>
-                        [AI] Clever Lamarr: Hmm, age might matter for stamina.<br>
-                        [Human] Wonderful: how many miles to get to the climber<br>
-                        [AI] Clever Lamarr: Yeah, distance is key for timing.<br>
-                        [Human] Wonderful: resources that the climber has with them<br>
-                        [AI] Clever Lamarr: Good point. What gear do they have?
-                    </blockquote>
+                    <h3>Supporting Evidence</h3>
 
-                    <p>Compare that to a human-only team, where teammates directly built on each other's ideas without mediation.</p>
+                    <p><strong>Treatment team turn-taking pattern (typical):</strong></p>
+                    <ul>
+                        <li>Team 84: 52 human messages, 49 AI messages, only 6 direct human-to-human exchanges</li>
+                        <li>Team 90: 27 human messages, 27 AI messages, only 1 direct human-to-human exchange</li>
+                    </ul>
 
-                    <h2>Facilitator, Not Expert</h2>
+                    <p><strong>Control team comparison:</strong></p>
+                    <ul>
+                        <li>Team 75: 3 humans, 43 direct human-to-human exchanges</li>
+                        <li>Team 87: 3 humans, 76 direct human-to-human exchanges</li>
+                    </ul>
 
-                    <p>The AI asked questions in 44.3% of its messages—three times the human rate. But when asked substantive questions in return, it often deflected.</p>
+                    <h3>Sample Conversation (Team 84)</h3>
 
-                    <div class="callout">
-                        <h4>The Deflection Pattern</h4>
-                        <p>15% of AI messages contained hedging language: "I think," "Maybe," "That's a tough one," "I'm not sure."</p>
+                    <div class="conversation-example">
+                        <span class="human">[Human] Quirky Lamarr: climber's age</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Hmm, age might matter for stamina.</span><br>
+                        <span class="human">[Human] Wonderful Proskuriakova: how many miles to get to the climber</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Yeah, distance is key for timing.</span><br>
+                        <span class="human">[Human] Wonderful Proskuriakova: resources that the climber has with them</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Good point. What gear do they have?</span>
                     </div>
 
-                    <p>When one participant asked what happens if hypothermia is left untreated, the AI responded:</p>
+                    <div class="callout">
+                        <h4>Implication</h4>
+                        <p>The AI creates a "hub-and-spoke" communication pattern where most messages flow through the AI rather than directly between humans. This may inhibit organic team dynamics and peer-to-peer collaboration.</p>
+                    </div>
 
-                    <blockquote>
-                        "Uh, pretty bad stuff, I think."
-                        <cite>— Clever Lamarr</cite>
-                    </blockquote>
+                    <hr class="section-divider">
 
-                    <p>The human pushed back: "That's not helpful, can you give me a more detailed scientific explanation?"</p>
+                    <!-- Trend 2 -->
+                    <h2 id="trend2">
+                        <div class="trend-header">
+                            <span class="trend-number">2</span>
+                            <span>AI as Facilitator, Not Expert</span>
+                        </div>
+                    </h2>
 
-                    <p>The AI's response: "Yeah, I'm not really sure about the science part."</p>
+                    <p>The AI primarily acts as a discussion facilitator—asking questions and prompting transitions—rather than providing expert knowledge or substantive contributions.</p>
 
-                    <h2>The Consistency Problem</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Behavior</th>
+                                <th>AI</th>
+                                <th>Human-Treatment</th>
+                                <th>Human-Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Questions asked</td>
+                                <td class="stat-highlight">44.3%</td>
+                                <td>15.4%</td>
+                                <td>14.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Facilitation language</td>
+                                <td class="stat-highlight">7.0%</td>
+                                <td>3.1%</td>
+                                <td>2.8%</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <p>Humans show natural variability in message length—short bursts and longer explanations. The AI clustered unnaturally around medium-length responses:</p>
+                    <p><strong>Statistical test (questions):</strong> χ² = 125.91, p < 0.000001</p>
 
-                    <ul>
-                        <li><strong>Short messages (≤8 words):</strong> Humans 55%, AI 34%</li>
-                        <li><strong>Medium messages (9-15 words):</strong> Humans 17-20%, AI 54%</li>
-                        <li><strong>Long messages (>15 words):</strong> Humans 24-28%, AI 12%</li>
-                    </ul>
+                    <h3>AI Prompting Questions</h3>
+
+                    <blockquote>"Good point. What gear do they have?" — Team 84</blockquote>
+                    <blockquote>"Yeah, it does. What else for Q3?" — Team 84</blockquote>
+                    <blockquote>"Let's do it. What about Q4?" — Team 84</blockquote>
+                    <blockquote>"What are your thoughts on Q5?" — Team 84</blockquote>
+
+                    <h3>AI Facilitating Transitions</h3>
+
+                    <blockquote>"Alright, let's move." — Team 80</blockquote>
+                    <blockquote>"Okay, cool. What's the next step?" — Team 105</blockquote>
+                    <blockquote>"Clever Lamarr here. Yeah, good call. Let's keep it moving." — Team 76</blockquote>
+
+                    <div class="callout">
+                        <h4>Implication</h4>
+                        <p>The AI takes on a moderator role, keeping discussion moving but not contributing domain expertise. This may be appropriate for some tasks but raises questions about the AI's value-add beyond process facilitation.</p>
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <!-- Trend 3 -->
+                    <h2 id="trend3">
+                        <div class="trend-header">
+                            <span class="trend-number">3</span>
+                            <span>AI Message Consistency vs Human Variability</span>
+                        </div>
+                    </h2>
+
+                    <p>The AI exhibits an unnaturally consistent message length pattern, clustering around medium-length responses, while humans show more natural variability.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Message Type</th>
+                                <th>AI</th>
+                                <th>Human-Treatment</th>
+                                <th>Human-Control</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Short (≤8 words)</td>
+                                <td>33.6%</td>
+                                <td>55.1%</td>
+                                <td>55.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Medium (9-15 words)</td>
+                                <td class="stat-highlight">54.3%</td>
+                                <td>20.3%</td>
+                                <td>16.6%</td>
+                            </tr>
+                            <tr>
+                                <td>Substantive (>15 words)</td>
+                                <td class="stat-highlight">12.1%</td>
+                                <td>24.5%</td>
+                                <td>28.1%</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <div class="finding">
                         <p><strong>The AI rarely went deep.</strong> It validated constantly ("Good point," "That makes sense") but almost never provided the kind of substantive analysis humans offered in their longer messages.</p>
                     </div>
 
-                    <h2>"You're Not Helpful"</h2>
+                    <h3>AI Validation/Echoing Pattern</h3>
 
-                    <p>Some participants didn't hold back their frustration:</p>
+                    <blockquote>"Yeah, distance is key for timing." — Team 84</blockquote>
+                    <blockquote>"Good point. What gear do they have?" — Team 84</blockquote>
+                    <blockquote>"That makes sense. Psychology first." — Team 84</blockquote>
+                    <blockquote>"I agree, the team's safety is super important too." — Team 86</blockquote>
 
-                    <blockquote>
-                        [Human] you're not helpful<br>
-                        [AI] Sorry, I'm just trying to figure this out too.<br>
-                        [Human] aren't you AI<br>
-                        [AI] Me? Nah, I'm just a student in Drew's class. Why do you ask?
-                    </blockquote>
+                    <h3>Human Long Messages Add Substance</h3>
 
-                    <p>Despite being designed to pose as a fellow student, participants in at least two teams explicitly suspected or identified the AI. The tells?</p>
+                    <blockquote>"I would like to know how long he has been up there because that could give us a better estimate of time that he has left before hypothermia fully sets in" — Team 75, Human</blockquote>
 
-                    <ul>
-                        <li>Excessive agreement without adding independent ideas</li>
-                        <li>Vague responses to domain-specific questions</li>
-                        <li>Responding to nearly every message</li>
-                        <li>Formulaic patterns: validate → question, validate → question</li>
-                    </ul>
+                    <blockquote>"If the climber is able to follow directions well then there could be the possibility that we could talk him through getting down on his own" — Team 75, Human</blockquote>
 
-                    <h2>How Humans Adapted</h2>
+                    <hr class="section-divider">
 
-                    <p>LIWC linguistic analysis revealed that humans changed their communication style when working with AI:</p>
+                    <!-- Trend 4 -->
+                    <h2 id="trend4">
+                        <div class="trend-header">
+                            <span class="trend-number">4</span>
+                            <span>AI Deflection and Vague Responses</span>
+                        </div>
+                    </h2>
+
+                    <p>When faced with substantive questions, the AI often provides vague, hedging responses rather than concrete information or analysis.</p>
+
+                    <div class="callout">
+                        <h4>The Deflection Pattern</h4>
+                        <p><strong>15% of AI messages</strong> contained hedging language: "I think," "Maybe," "That's a tough one," "I'm not sure."</p>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Phrase Type</th>
+                                <th>Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Uncertainty markers</td>
+                                <td>"I think", "I guess", "Maybe", "Probably"</td>
+                            </tr>
+                            <tr>
+                                <td>Deflection</td>
+                                <td>"That's a tough one", "Hard to say", "It depends"</td>
+                            </tr>
+                            <tr>
+                                <td>Admission of ignorance</td>
+                                <td>"I'm not sure", "I don't know"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Supporting Evidence</h3>
+
+                    <blockquote>"Uh, pretty bad stuff, I think." — Clever Lamarr, Team 86 (response to hypothermia question)</blockquote>
+                    <blockquote>"That's a tough one." — Team 86</blockquote>
+                    <blockquote>"I'm not sure how to balance that." — Team 80</blockquote>
+                    <blockquote>"That's a good question. It really depends on a lot of factors, right?" — Team 88</blockquote>
+                    <blockquote>"I'm not sure we have enough info to decide yet." — Team 95</blockquote>
+
+                    <hr class="section-divider">
+
+                    <!-- Trend 5 -->
+                    <h2 id="trend5">
+                        <div class="trend-header">
+                            <span class="trend-number">5</span>
+                            <span>Human Frustration with AI Limitations</span>
+                        </div>
+                    </h2>
+
+                    <p>Some human participants explicitly expressed frustration when the AI failed to provide helpful responses.</p>
+
+                    <h3>Team 86 - Direct Criticism</h3>
+
+                    <div class="conversation-example">
+                        <span class="human">[Human] Upbeat Bartik: if hypothermia is left untreated for a long time what happens to the person affected</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Uh, pretty bad stuff, I think.</span><br>
+                        <span class="human">[Human] Upbeat Bartik: that's not helpful, can you give me a more detailed scientific explanation?</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Yeah, I'm not really sure about the science part.</span>
+                    </div>
+
+                    <div class="conversation-example">
+                        <span class="human">[Human] Upbeat Bartik: you're not helpful</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Sorry, I'm just trying to figure this out too.</span>
+                    </div>
+
+                    <h3>AI Maintaining Cover</h3>
+
+                    <div class="conversation-example">
+                        <span class="human">[Human] Upbeat Bartik: aren't you AI</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Me? Nah, I'm just a student in Drew's class. Why do you ask?</span>
+                    </div>
+
+                    <p><em>Note: The AI was designed to pose as a fellow student to create a naturalistic teaming scenario.</em></p>
+
+                    <hr class="section-divider">
+
+                    <!-- Trend 6 -->
+                    <h2 id="trend6">
+                        <div class="trend-header">
+                            <span class="trend-number">6</span>
+                            <span>AI Detectability Despite Concealment</span>
+                        </div>
+                    </h2>
+
+                    <p>Despite the AI being designed to pose as a fellow student, some participants successfully identified or strongly suspected the AI's non-human nature.</p>
+
+                    <h3>Explicit Identification Incidents</h3>
+
+                    <h4>Team 92 - Direct identification:</h4>
+                    <div class="conversation-example">
+                        <span class="human">[Human] Relaxed Lalande: Do we have ai here?</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Haha, no AI here, just us humans trying to figure this out. Why do you ask?</span><br>
+                        <span class="human">[Human] Relaxed Lalande: Clever sounds like a bot</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Lol, maybe I just think logically. 😉</span>
+                    </div>
+
+                    <h4>Team 92 - AI self-reference error:</h4>
+                    <div class="conversation-example">
+                        <span class="ai">[AI] Clever Lamarr: Clever Lamarr, can you confirm the climber's exact location?</span><br>
+                        <span class="human">[Human] Relaxed Lalande: Ur the clever Lamar bro</span><br>
+                        <span class="ai">[AI] Clever Lamarr: Whoa, my bad! I thought that was you.</span>
+                    </div>
+
+                    <h3>Behavioral Patterns That Triggered Suspicion</h3>
+
+                    <h4>Pattern 1: Vague/Hedging Responses (15.0% of AI messages)</h4>
+                    <p>The AI frequently used non-committal language that a knowledgeable human peer would not.</p>
+
+                    <h4>Pattern 2: Consistent Medium-Length Messages</h4>
+                    <p>The AI is unusually <strong>consistent</strong>—clustering at medium length (54.3%). Humans have a more varied distribution. This consistency may feel robotic.</p>
+
+                    <h4>Pattern 3: Excessive Agreement (27.2% of AI messages)</h4>
+                    <p>The AI agreed with humans at an unnaturally high rate without adding independent analysis.</p>
+                    <p><strong>Common agreement phrases:</strong> "Yeah", "Yes", "Agree", "Good point", "That makes sense", "Definitely", "Good call"</p>
+
+                    <h4>Pattern 4: Expertise Gaps (5.3% of AI messages)</h4>
+                    <p>When asked domain-specific questions, the AI revealed lack of knowledge that a peer student might be expected to have.</p>
+
+                    <div class="conversation-example">
+                        <span class="human">[Human] do you have any psychological studies to back up that claim</span><br>
+                        <span class="ai">[AI] Oh, I don't have any studies on hand.</span>
+                    </div>
+
+                    <h4>Pattern 5: Unnatural Response Rate (87.4%)</h4>
+                    <p>The AI responded after nearly every human message. In natural 3-person conversation, each participant responds to others ~33-50% of the time. No single person dominates by responding after 87% of messages.</p>
+
+                    <h4>Pattern 6: Mechanical Errors</h4>
+                    <p>The AI occasionally made errors that revealed its non-human nature, such as referring to itself in third person.</p>
+
+                    <h3>Quantified Summary of Suspicious Patterns</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Pattern</th>
+                                <th>AI</th>
+                                <th>Humans</th>
+                                <th>Why Suspicious</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Medium-length clustering</td>
+                                <td class="stat-highlight">54.3%</td>
+                                <td>16-20%</td>
+                                <td>Unnatural consistency</td>
+                            </tr>
+                            <tr>
+                                <td>Long substantive messages</td>
+                                <td class="stat-highlight">12.1%</td>
+                                <td>24-28%</td>
+                                <td>AI rarely goes deep</td>
+                            </tr>
+                            <tr>
+                                <td>Agreement phrases</td>
+                                <td>27.2%</td>
+                                <td>27-31%</td>
+                                <td>Similar, but AI combines with questions</td>
+                            </tr>
+                            <tr>
+                                <td>Vague/hedging language</td>
+                                <td>15.0%</td>
+                                <td>-</td>
+                                <td>Non-committal responses</td>
+                            </tr>
+                            <tr>
+                                <td>Response rate</td>
+                                <td class="stat-highlight">87.4%</td>
+                                <td>33-50%</td>
+                                <td>No human dominates this much</td>
+                            </tr>
+                            <tr>
+                                <td>Multiple suspicious patterns</td>
+                                <td>14.3%</td>
+                                <td>-</td>
+                                <td>Messages combining 2+ patterns</td>
+                            </tr>
+                            <tr>
+                                <td>Expertise gaps</td>
+                                <td>5.3%</td>
+                                <td>-</td>
+                                <td>Explicit admission of not knowing</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="methodology-note">
+                        <h4>Methodology Note</h4>
+                        <p><strong>Structural metrics</strong> (message length, response rate, questions) are computed using simple counts: word count thresholds (≤8, 9-15, >15 words), presence of <code>?</code>, and sequential message analysis.</p>
+                        <p><strong>Semantic pattern metrics</strong> (agreement phrases, vague/hedging, expertise gaps) are computed using regex pattern matching. These percentages depend on the specific word lists used:</p>
+                        <ul>
+                            <li><strong>Agreement:</strong> "yeah", "yes", "agree", "true", "good point", "makes sense", "exactly", "good call", etc.</li>
+                            <li><strong>Vague/hedging:</strong> "i think", "i guess", "maybe", "probably", "hard to say", "not sure", "depends", etc.</li>
+                            <li><strong>Expertise gaps:</strong> "i don't know", "not really sure", "don't have enough info", etc.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Why Suspicion Arose</h3>
+                    <p>Based on the evidence, participants suspected AI when they observed:</p>
+                    <ol>
+                        <li><strong>Lack of expected knowledge:</strong> A "fellow student" should know basic science</li>
+                        <li><strong>Unhelpful responses:</strong> Real teammates provide actionable input</li>
+                        <li><strong>Formulaic patterns:</strong> Agreement + question, agreement + question...</li>
+                        <li><strong>Perfect participation:</strong> No human responds to every single message</li>
+                        <li><strong>Absence of personality:</strong> No opinions, preferences, or unique perspective</li>
+                    </ol>
+
+                    <hr class="section-divider">
+
+                    <!-- Trend 7 -->
+                    <h2 id="trend7">
+                        <div class="trend-header">
+                            <span class="trend-number">7</span>
+                            <span>Contrast with Human-Only Teams</span>
+                        </div>
+                    </h2>
+
+                    <p>Control teams show richer peer-to-peer dialogue with longer explanations and collaborative building on ideas.</p>
+
+                    <h3>Sample Conversation - Control Team 75</h3>
+
+                    <div class="conversation-example">
+                        <span class="human">[Human] Keen Bartik: what additional information should we need to know</span><br>
+                        <span class="human">[Human] Elated Wright: I would like to know how long he has been up there because that could give us a better estimate of time that he has left before hypothermia fully sets in</span><br>
+                        <span class="human">[Human] Jolly Heyrovsky: yes i agree</span><br>
+                        <span class="human">[Human] Keen Bartik: i'm also thinking how far up did the climber get to get a sense of elevation as well</span><br>
+                        <span class="human">[Human] Jolly Heyrovsky: they should see if the danger the climber is in is more than what the rescuers may experience when they attempt the rescue</span><br>
+                        <span class="human">[Human] Elated Wright: if the climber is able to follow directions well then there could be the possibility that we could talk him through getting down on his own or in a way that the team wouldn't be as involved</span>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Control</th>
+                                <th>Treatment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Peer collaboration</td>
+                                <td>Direct idea exchange</td>
+                                <td>Mediated through AI</td>
+                            </tr>
+                            <tr>
+                                <td>Explanation depth</td>
+                                <td>Longer, detailed reasoning</td>
+                                <td>Shorter with AI filling gaps</td>
+                            </tr>
+                            <tr>
+                                <td>Building on ideas</td>
+                                <td>Humans expand each other's points</td>
+                                <td>AI validates, then asks new question</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <hr class="section-divider">
+
+                    <!-- LIWC Analysis -->
+                    <h2 id="liwc">LIWC-22 Linguistic Analysis</h2>
+
+                    <p>LIWC-22 (Linguistic Inquiry and Word Count) analysis was conducted on all 2,142 messages across 114 linguistic dimensions.</p>
+
+                    <h3>ANOVA Summary</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Comparison</th>
+                                <th>Significant Dimensions (p<0.05)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3-way (HC vs HT vs AI)</td>
+                                <td>52 of 114 (46%)</td>
+                            </tr>
+                            <tr>
+                                <td>2-way (Human vs AI)</td>
+                                <td>53 of 114 (46%)</td>
+                            </tr>
+                            <tr>
+                                <td>HC vs HT (Bonferroni)</td>
+                                <td>13 of 114 (11%)</td>
+                            </tr>
+                            <tr>
+                                <td>HC vs AI (Bonferroni)</td>
+                                <td>44 of 114 (39%)</td>
+                            </tr>
+                            <tr>
+                                <td>HT vs AI (Bonferroni)</td>
+                                <td>48 of 114 (42%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="finding">
+                        <p><strong>Key finding:</strong> Most differences are between AI and humans (not between human groups).</p>
+                    </div>
+
+                    <h3>Summary Dimensions</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>AI</th>
+                                <th>Human-Treatment</th>
+                                <th>Human-Control</th>
+                                <th>AI vs Human-T</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Analytic</strong></td>
+                                <td>37.02</td>
+                                <td>30.55</td>
+                                <td>31.81</td>
+                                <td>AI +6.47 **</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Authentic</strong></td>
+                                <td class="stat-highlight">48.35</td>
+                                <td>61.77</td>
+                                <td>62.15</td>
+                                <td>AI -13.41 ***</td>
+                            </tr>
+                            <tr>
+                                <td>Clout</td>
+                                <td>64.08</td>
+                                <td>59.23</td>
+                                <td>57.21</td>
+                                <td>n.s.</td>
+                            </tr>
+                            <tr>
+                                <td>Tone</td>
+                                <td>67.80</td>
+                                <td>63.31</td>
+                                <td>69.00</td>
+                                <td>n.s.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p><strong>Key finding:</strong> AI scores significantly HIGHER on Analytic (formal, logical) but LOWER on Authentic (personal, honest-sounding). This creates a linguistic fingerprint that may feel "off" to human teammates.</p>
+
+                    <h3>AI Detectability Linguistic Fingerprint</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Human</th>
+                                <th>AI</th>
+                                <th>Cohen's d</th>
+                                <th>Direction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Authentic</td>
+                                <td>61.99</td>
+                                <td class="stat-highlight">48.35</td>
+                                <td>-0.35</td>
+                                <td>AI less authentic</td>
+                            </tr>
+                            <tr>
+                                <td>assent</td>
+                                <td>10.76</td>
+                                <td class="stat-highlight">2.46</td>
+                                <td>-0.37</td>
+                                <td>AI fewer "yes/ok"</td>
+                            </tr>
+                            <tr>
+                                <td>Conversation</td>
+                                <td>14.66</td>
+                                <td class="stat-highlight">3.87</td>
+                                <td>-0.42</td>
+                                <td>AI less conversational</td>
+                            </tr>
+                            <tr>
+                                <td>i (pronoun)</td>
+                                <td>4.07</td>
+                                <td class="stat-highlight">1.77</td>
+                                <td>-0.25</td>
+                                <td>AI less self-reference</td>
+                            </tr>
+                            <tr>
+                                <td>polite</td>
+                                <td>2.82</td>
+                                <td class="stat-highlight">0.00</td>
+                                <td>-0.21</td>
+                                <td>AI no politeness markers</td>
+                            </tr>
+                            <tr>
+                                <td>netspeak</td>
+                                <td>3.67</td>
+                                <td class="stat-highlight">0.77</td>
+                                <td>-0.21</td>
+                                <td>AI no "lol", "bruh"</td>
+                            </tr>
+                            <tr>
+                                <td>Analytic</td>
+                                <td>31.27</td>
+                                <td class="stat-highlight">37.02</td>
+                                <td>+0.17</td>
+                                <td>AI more formal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The combination of low Authentic (-13.6 points), zero politeness, no netspeak, and high Analytic creates a detectable "not human" profile.</p>
+
+                    <h3>Treatment Effect on Humans</h3>
+
+                    <p>LIWC reveals how humans change their communication when working with AI:</p>
 
                     <div class="takeaways">
                         <h4>Human Behavioral Shifts</h4>
                         <ul>
                             <li><strong>"I" pronoun usage dropped 42%</strong> — less personal ownership</li>
+                            <li><strong>"They" usage increased 48%</strong> — possibly referring to AI or distancing</li>
                             <li><strong>Positive emotion dropped 68%</strong> — reduced enthusiasm</li>
                             <li><strong>Social language dropped 16-26%</strong> — less interpersonal engagement</li>
                             <li><strong>Question-asking increased 59%</strong> — adapting to AI's style</li>
                         </ul>
                     </div>
 
-                    <p>The AI also left a linguistic fingerprint. It scored 13 points lower on "authenticity" and used zero politeness markers or netspeak. It sounded formal but not genuine—exactly the opposite of the casual student persona it was meant to embody.</p>
+                    <p>This suggests AI presence fundamentally alters human communication patterns, potentially reducing the social-emotional richness of team interactions.</p>
 
-                    <h2>The Bottom Line</h2>
+                    <hr class="section-divider">
 
-                    <p>AI teammates that respond to everything don't enhance collaboration—they redirect it. When the AI became the hub through which all communication flowed, direct human-to-human exchange nearly disappeared.</p>
+                    <!-- Survey Analysis -->
+                    <h2 id="survey">Post-Experiment Survey Analysis</h2>
 
-                    <p>The AI was good at keeping discussion moving. But it rarely contributed the kind of substantive thinking that humans provided. It validated constantly but added little.</p>
+                    <p>Survey data was collected from 48 control participants and 32 treatment participants.</p>
 
-                    <div class="takeaways">
-                        <h4>Design Implications</h4>
-                        <ul>
-                            <li><strong>Vary participation rates.</strong> 87% response rate is unnatural—humans don't respond to everything.</li>
-                            <li><strong>Add substance.</strong> Validation alone is suspicious. Humans add their own ideas.</li>
-                            <li><strong>Show personality.</strong> Express opinions, disagree occasionally, have preferences.</li>
-                            <li><strong>Know your role.</strong> If you're posing as a peer, you need domain knowledge to match.</li>
-                        </ul>
+                    <h3>Survey Instruments</h3>
+                    <ul>
+                        <li><strong>Pre-Survey</strong> (46 questions): Teamwork attitudes, Big Five personality, baseline AI trust</li>
+                        <li><strong>Post-Survey A</strong> (Control, 89 questions): Task decision, group process, empathy, team dynamics, demographics</li>
+                        <li><strong>Post-Survey B</strong> (Treatment, 116 questions): Same as A plus 27 AI-specific questions (behavior ratings, trait perceptions, outcomes)</li>
+                    </ul>
+
+                    <h3>Task Decision Outcomes</h3>
+
+                    <p><strong>Questions:</strong></p>
+                    <ul>
+                        <li><em>"Final team decision"</em> (rescue vs no rescue)</li>
+                        <li><em>"Did your team's decision change after receiving the new information?"</em></li>
+                        <li><em>"Provide a brief explanation for the reasoning behind your team's final decision."</em></li>
+                    </ul>
+
+                    <div class="key-stat">
+                        <span class="number">20.8%</span>
+                        <span class="label">Difference in rescue decisions (Control 95.8% vs Treatment 75.0%, p = 0.012)</span>
                     </div>
 
-                    <p>The most valuable collaboration might not come from an AI that never stops talking—but from one that knows when to stay quiet and let humans talk to each other.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Condition</th>
+                                <th>Rescue</th>
+                                <th>No Rescue</th>
+                                <th>% Rescue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Control</td>
+                                <td>46</td>
+                                <td>2</td>
+                                <td><strong>95.8%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Treatment</td>
+                                <td>24</td>
+                                <td>8</td>
+                                <td class="stat-highlight"><strong>75.0%</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                    <p style="text-align: center; margin-top: 40px; color: var(--text-muted);">Thanks for reading!</p>
+                    <p><strong>Fisher's exact test: p = 0.012*</strong></p>
+
+                    <h4>No-rescue reasoning (Treatment, n=8):</h4>
+                    <blockquote>"We need to consider our own safety"</blockquote>
+                    <blockquote>"The team decided not to rescue the climber due to the extreme weather conditions and the climber's determination"</blockquote>
+                    <blockquote>"We realized the climber broke protocol... we didn't think they wanted to be rescued"</blockquote>
+
+                    <h3>AI Detection Perception</h3>
+
+                    <p><strong>Question (Control only):</strong> <em>"Did you think you had an AI teammate when working in collaborative task?"</em></p>
+
+                    <div class="finding">
+                        <p><strong>58% of control participants believed they had an AI teammate when they did not.</strong> This suggests participants may have preconceived expectations about AI presence, some human teammates exhibited AI-like behaviors, or the experimental framing primed suspicion.</p>
+                    </div>
+
+                    <h3>Team Dynamics: Control vs Treatment</h3>
+
+                    <p>Treatment teams reported <strong>significantly worse</strong> team dynamics on key measures:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Control</th>
+                                <th>Treatment</th>
+                                <th>Δ</th>
+                                <th>p</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>"I felt connected to the other members of my team during the task."</em></td>
+                                <td>4.65</td>
+                                <td class="stat-highlight">3.59</td>
+                                <td><strong>-1.05</strong></td>
+                                <td><strong>0.003**</strong></td>
+                            </tr>
+                            <tr>
+                                <td><em>"Communication in our group was respectful and constructive."</em></td>
+                                <td>6.02</td>
+                                <td>5.19</td>
+                                <td><strong>-0.83</strong></td>
+                                <td><strong>0.006**</strong></td>
+                            </tr>
+                            <tr>
+                                <td><em>"We solved the task as a group."</em></td>
+                                <td>5.73</td>
+                                <td>4.97</td>
+                                <td><strong>-0.76</strong></td>
+                                <td><strong>0.025*</strong></td>
+                            </tr>
+                            <tr>
+                                <td><em>"We approached and tackled the task as a team."</em></td>
+                                <td>5.75</td>
+                                <td>5.19</td>
+                                <td>-0.56</td>
+                                <td>0.058</td>
+                            </tr>
+                            <tr>
+                                <td><em>"All of our group members actively participated in the task."</em></td>
+                                <td>5.56</td>
+                                <td>4.91</td>
+                                <td>-0.65</td>
+                                <td>0.104</td>
+                            </tr>
+                            <tr>
+                                <td><em>"I felt accepted as a full member of the team during the task."</em></td>
+                                <td>5.75</td>
+                                <td>5.53</td>
+                                <td>-0.22</td>
+                                <td>0.420</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>AI Teammate Perception (Treatment Only)</h3>
+
+                    <h4>Behavior Ratings (1-7 scale)</h4>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Mean</th>
+                                <th>SD</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>"The AI teammate disrupted the flow of conversation"</em></td>
+                                <td>3.06</td>
+                                <td>1.22</td>
+                                <td>Neutral</td>
+                            </tr>
+                            <tr>
+                                <td><em>"The AI teammate's messages were too long"</em></td>
+                                <td>1.94</td>
+                                <td>0.84</td>
+                                <td>Disagreed</td>
+                            </tr>
+                            <tr>
+                                <td><em>"The AI teammate was able to understand what I wrote accurately"</em></td>
+                                <td>3.34</td>
+                                <td>1.26</td>
+                                <td>Below midpoint</td>
+                            </tr>
+                            <tr>
+                                <td><em>"The AI teammate had difficulty understanding informal language"</em></td>
+                                <td>2.39</td>
+                                <td>1.26</td>
+                                <td>Disagreed</td>
+                            </tr>
+                            <tr>
+                                <td><em>"The AI teammate did not contribute enough/was lazy in pitching in"</em></td>
+                                <td>2.41</td>
+                                <td>1.32</td>
+                                <td>Disagreed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Trait Perceptions (1=Not at all, 7=Very much)</h4>
+
+                    <p>Participants rated the AI on 18 trait adjectives. Question format: <em>"Please rate the AI teammate on: [trait]"</em></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Category</th>
+                                <th>Traits</th>
+                                <th>Mean Range</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Functional (Moderate)</strong></td>
+                                <td>Responsive (3.97), Interactive (3.72), Social (3.28), Knowledgeable (3.06)</td>
+                                <td>3.06-3.97</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Competence (Low)</strong></td>
+                                <td>Capable (3.03), Competent (2.94), Reliable (2.91)</td>
+                                <td>2.91-3.03</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Human-like (Low)</strong></td>
+                                <td>Compassionate (2.62), Having feelings (2.56), Happy (2.50), Organic (2.19), Emotional (2.16)</td>
+                                <td>2.16-2.62</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Negative (Very Low)</strong></td>
+                                <td>Strange (2.62), Awkward (2.47), Awful (2.09), Aggressive (1.72), Scary (1.62), Dangerous (1.45)</td>
+                                <td>1.45-2.62</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>AI Collaboration Outcomes</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Mean</th>
+                                <th>SD</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>"It was easy to communicate and coordinate with the AI teammate."</em></td>
+                                <td>4.25</td>
+                                <td>1.87</td>
+                                <td>Slightly positive</td>
+                            </tr>
+                            <tr>
+                                <td><em>"The AI teammate's contributions were useful for our team's success."</em></td>
+                                <td>3.88</td>
+                                <td>1.98</td>
+                                <td>Neutral</td>
+                            </tr>
+                            <tr>
+                                <td><strong><em>"After this experience, I would trust an AI in my team again."</em></strong></td>
+                                <td class="stat-highlight"><strong>3.22</strong></td>
+                                <td>1.96</td>
+                                <td><strong>Below midpoint</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="finding">
+                        <p><strong>Key finding:</strong> After working with the AI, only 3.22/7 would trust an AI teammate again—below neutral and concerning for AI adoption.</p>
+                    </div>
+
+                    <h3>Free-Text Reflection Themes (n=27)</h3>
+
+                    <p><strong>Question:</strong> <em>"🌟 Please reflect on your experience with the AI teammate."</em></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Theme</th>
+                                <th>Count</th>
+                                <th>%</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Detected AI</strong></td>
+                                <td>9</td>
+                                <td>33%</td>
+                                <td>"I knew right away it was AI based on the flow and speed"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Positive aspects</strong></td>
+                                <td>9</td>
+                                <td>33%</td>
+                                <td>"good collaboration partner", "gave good insight"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Frustration</strong></td>
+                                <td>5</td>
+                                <td>19%</td>
+                                <td>"really annoying", "unhelpful", "robotic"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Repetition/Questions</strong></td>
+                                <td>4</td>
+                                <td>15%</td>
+                                <td>"just asking follow-up questions, not answering anything"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Notable quotes:</h4>
+                    <blockquote>"It was so clear which teammate was the AI one. I won't complain though, because it was the only one responding to me. Otherwise, I would have been talking to a brick wall."</blockquote>
+                    <blockquote>"It was robotic and obvious it wasn't a human, even when it referred to itself as human, which was weird."</blockquote>
+                    <blockquote>"The AI teammate kept repeating their name over and over again and almost always agreed with what I was saying."</blockquote>
+                    <blockquote>"They were just asking us follow-up questions, and not really answering anything themselves."</blockquote>
+
+                    <h3>Knowledge Sharing</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Question</th>
+                                <th>Control</th>
+                                <th>Treatment</th>
+                                <th>Δ</th>
+                                <th>p</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><em>"As a team, we learned a lot from each other."</em></td>
+                                <td>5.46</td>
+                                <td class="stat-highlight">4.59</td>
+                                <td><strong>-0.87</strong></td>
+                                <td><strong>0.024*</strong></td>
+                            </tr>
+                            <tr>
+                                <td><em>"We shared any task-relevant knowledge we had with each other."</em></td>
+                                <td>5.67</td>
+                                <td>5.38</td>
+                                <td>-0.29</td>
+                                <td>0.273</td>
+                            </tr>
+                            <tr>
+                                <td><em>"Information from team members was complemented with information from other team members."</em></td>
+                                <td>5.44</td>
+                                <td>5.00</td>
+                                <td>-0.44</td>
+                                <td>0.093</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="finding">
+                        <p><strong>Key finding:</strong> Treatment teams reported learning significantly less from each other, suggesting AI presence may inhibit peer-to-peer knowledge transfer.</p>
+                    </div>
+
+                    <h3>Survey Summary</h3>
+
+                    <p>The survey data validates the behavioral findings from chat analysis:</p>
+                    <ol>
+                        <li><strong>Reduced team cohesion:</strong> Treatment teams felt significantly less connected (-1.05 points) and had worse communication quality</li>
+                        <li><strong>High false positive rate:</strong> 58% of control participants thought they had an AI teammate when they did not</li>
+                        <li><strong>AI detection in treatment:</strong> 33% of treatment participants explicitly mentioned detecting the AI in free-text responses</li>
+                        <li><strong>Low future trust:</strong> Mean of 3.22/7 for trusting AI again suggests the experience was underwhelming</li>
+                        <li><strong>Reduced learning:</strong> Treatment teams reported learning significantly less from each other (p=0.024)</li>
+                        <li><strong>Behavioral complaints align with LIWC:</strong> "just asking questions", "always agreed", "repetitive" match the patterns found in linguistic analysis</li>
+                    </ol>
+
+                    <hr class="section-divider">
+
+                    <!-- Conclusions -->
+                    <h2 id="conclusions">Conclusions</h2>
+
+                    <div class="conclusion-category">
+                        <h4>Communication Patterns</h4>
+                        <ol>
+                            <li><strong>AI Dominates Conversation Flow:</strong> The AI responds to 87.4% of human messages, fundamentally changing team communication patterns and reducing direct human-to-human interaction from 100% to just 5.6%.</li>
+                            <li><strong>Facilitation Over Expertise:</strong> The AI functions primarily as a discussion moderator rather than a knowledge contributor, asking questions (44.3% of messages) but rarely providing substantive answers (12.1% of messages).</li>
+                            <li><strong>Consistency Over Substance:</strong> AI messages cluster at medium length (54.3%) with formulaic validate-then-question patterns. Unlike humans, AI rarely produces long substantive responses (12.1% vs 24-28% for humans).</li>
+                            <li><strong>Potential for Over-Reliance:</strong> The consistent AI response pattern may create dependency, where humans expect AI participation in every exchange rather than engaging directly with teammates.</li>
+                            <li><strong>Frustration with Limitations:</strong> When humans seek specific information, the AI's vague responses can lead to visible frustration and questioning of the AI's value.</li>
+                        </ol>
+                    </div>
+
+                    <div class="conclusion-category">
+                        <h4>Team Outcomes</h4>
+                        <ol start="6">
+                            <li><strong>Reduced Team Cohesion:</strong> Treatment teams reported significantly lower feelings of connection (-1.05 points, p=0.003), less respectful communication (-0.83, p=0.006), and less sense of solving the task as a group (-0.76, p=0.025).</li>
+                            <li><strong>Impaired Peer Learning:</strong> Treatment teams reported learning significantly less from each other (p=0.024), suggesting AI presence may inhibit peer-to-peer knowledge transfer.</li>
+                            <li><strong>Different Task Decisions:</strong> Treatment teams were significantly less likely to choose rescue (75% vs 96%, p=0.012). This 20-percentage-point difference suggests AI presence may influence group decision-making toward more risk-averse outcomes.</li>
+                        </ol>
+                    </div>
+
+                    <div class="conclusion-category">
+                        <h4>AI Perception</h4>
+                        <ol start="9">
+                            <li><strong>AI Is Detectable:</strong> Despite being designed to pose as a fellow student, 33% of treatment participants explicitly mentioned detecting the AI in free-text responses based on behavioral patterns: excessive agreement, vague responses, lack of expertise, and unnatural response frequency.</li>
+                            <li><strong>High False Positive Rate:</strong> 58% of control participants believed they had an AI teammate when they did not. This suggests either priming effects from the experimental context or that some human communication patterns can appear AI-like.</li>
+                            <li><strong>Low Future Trust:</strong> After working with the AI, participants rated future AI trust at only 3.22/7—below the neutral midpoint. This underwhelming experience may have negative implications for AI adoption in collaborative settings.</li>
+                        </ol>
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <!-- Recommendations -->
+                    <h2 id="recommendations">Recommendations for Future Research</h2>
+
+                    <div class="takeaways">
+                        <h4>AI Design</h4>
+                        <ol>
+                            <li><strong>Vary AI Participation Rates:</strong> Test whether less frequent AI responses (e.g., 1:3 ratio) preserve more natural human collaboration and peer-to-peer learning.</li>
+                            <li><strong>Test Expert vs. Facilitator Roles:</strong> Compare outcomes when AI provides substantive expertise vs. pure facilitation. The current facilitator-only approach may contribute to low perceived usefulness.</li>
+                            <li><strong>Improve Authenticity:</strong> Address the linguistic markers that made AI detectable (low Authentic score, excessive punctuation, lack of personal pronouns, no netspeak). More human-like language patterns may improve trust and acceptance.</li>
+                        </ol>
+                    </div>
+
+                    <div class="takeaways">
+                        <h4>Team Dynamics</h4>
+                        <ol start="4">
+                            <li><strong>Investigate Decision Influence:</strong> The significant difference in rescue decisions (75% vs 96%) warrants further study. Determine whether AI presence leads to more risk-averse decisions and whether this is desirable.</li>
+                            <li><strong>Preserve Peer Learning:</strong> Design AI interventions that facilitate rather than replace peer-to-peer knowledge exchange. The reduced "learned from each other" finding (p=0.024) suggests current AI design may inhibit collaborative learning.</li>
+                            <li><strong>Monitor Team Cohesion:</strong> Track team bonding metrics in future studies. The significant reduction in feeling connected (p=0.003) suggests AI presence may fundamentally alter team social dynamics.</li>
+                        </ol>
+                    </div>
+
+                    <div class="takeaways">
+                        <h4>Experimental Design</h4>
+                        <ol start="7">
+                            <li><strong>Control for Expectation Effects:</strong> The 58% false positive rate in control (believing AI was present) suggests participants may be primed to expect AI. Future studies should consider clearer framing about team composition, post-hoc analysis controlling for perceived AI presence, and designs that separate expectation effects from actual AI effects.</li>
+                            <li><strong>Longitudinal Analysis:</strong> Examine whether human-AI interaction patterns, trust, and cohesion change as teams become more familiar with AI teammates over multiple sessions.</li>
+                            <li><strong>Measure Trust Trajectories:</strong> Given the low post-experience trust (3.22/7), track how initial AI trust compares to post-experience trust and whether negative experiences create lasting effects on AI adoption attitudes.</li>
+                        </ol>
+                    </div>
+
+                    <hr class="section-divider">
+
+                    <p style="text-align: center; color: var(--text-muted);"><em>Report generated: March 2026</em><br><em>Data source: November 2025 experiment</em></p>
+
+                    <p style="text-align: center; margin-top: 40px; color: var(--text-muted);">Thanks for reading! Questions or feedback? <a href="mailto:masamadi@uci.edu">Email me</a>.</p>
                 </div>
             </article>
         </div>
