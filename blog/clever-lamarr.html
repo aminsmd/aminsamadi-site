@@ -5,116 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human-AI Team Communication Analysis - Amin Samadi</title>
     <link rel="stylesheet" href="../css/style.css">
-    <style>
-        /* Additional styles for tables and data presentation */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        th, td {
-            padding: 0.75rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-        th {
-            background: var(--bg-secondary);
-            font-weight: 600;
-        }
-        tr:hover {
-            background: var(--bg-secondary);
-        }
-        .stat-highlight {
-            font-weight: 600;
-            color: var(--accent);
-        }
-        .section-divider {
-            border: none;
-            border-top: 2px solid var(--border);
-            margin: 3rem 0;
-        }
-        .trend-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .trend-number {
-            background: var(--accent);
-            color: white;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            flex-shrink: 0;
-        }
-        .conversation-example {
-            background: var(--bg-secondary);
-            padding: 1rem;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            margin: 1rem 0;
-            overflow-x: auto;
-        }
-        .conversation-example .human {
-            color: var(--text);
-        }
-        .conversation-example .ai {
-            color: var(--accent);
-        }
-        .toc {
-            background: var(--bg-secondary);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        .toc h3 {
-            margin-top: 0;
-        }
-        .toc ul {
-            margin: 0;
-            padding-left: 1.5rem;
-        }
-        .toc li {
-            margin: 0.5rem 0;
-        }
-        .key-stat {
-            background: linear-gradient(135deg, var(--accent), var(--accent-secondary, #6366f1));
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .key-stat .number {
-            font-size: 3rem;
-            font-weight: 700;
-            display: block;
-        }
-        .key-stat .label {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        .methodology-note {
-            background: var(--bg-secondary);
-            border-left: 4px solid var(--accent);
-            padding: 1rem;
-            margin: 1.5rem 0;
-            font-size: 0.9rem;
-        }
-        .conclusion-category {
-            margin-top: 2rem;
-        }
-        .conclusion-category h4 {
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-    </style>
 </head>
 <body>
     <nav>
@@ -180,7 +70,7 @@
                         <span class="label">Human-to-human interaction rate when AI was present (down from 100%)</span>
                     </div>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Finding</th>
@@ -221,11 +111,11 @@
                                 <td>-</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h3>LIWC-22 Highlights (114 dimensions analyzed)</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>LIWC Finding</th>
@@ -266,11 +156,11 @@
                                 <td>AI 57% lower (d=-0.25)</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h3>Survey Highlights (80 participants)</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Finding</th>
@@ -317,7 +207,7 @@
                                 <td>False positive</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <hr class="section-divider">
 
@@ -335,7 +225,7 @@
                         <p><strong>Human-to-human communication dropped from 100% to just 5.6%</strong> when an AI was present. Instead of talking to each other, humans started talking <em>through</em> the AI.</p>
                     </div>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Metric</th>
@@ -365,7 +255,7 @@
                                 <td>5.3%</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <p><strong>Statistical test:</strong> t = 128.61, p < 0.000001</p>
 
@@ -411,7 +301,7 @@
 
                     <p>The AI primarily acts as a discussion facilitator—asking questions and prompting transitions—rather than providing expert knowledge or substantive contributions.</p>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Behavior</th>
@@ -434,7 +324,7 @@
                                 <td>2.8%</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <p><strong>Statistical test (questions):</strong> χ² = 125.91, p < 0.000001</p>
 
@@ -468,7 +358,7 @@
 
                     <p>The AI exhibits an unnaturally consistent message length pattern, clustering around medium-length responses, while humans show more natural variability.</p>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Message Type</th>
@@ -497,7 +387,7 @@
                                 <td>28.1%</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="finding">
                         <p><strong>The AI rarely went deep.</strong> It validated constantly ("Good point," "That makes sense") but almost never provided the kind of substantive analysis humans offered in their longer messages.</p>
@@ -533,7 +423,7 @@
                         <p><strong>15% of AI messages</strong> contained hedging language: "I think," "Maybe," "That's a tough one," "I'm not sure."</p>
                     </div>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Phrase Type</th>
@@ -554,7 +444,7 @@
                                 <td>"I'm not sure", "I don't know"</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h3>Supporting Evidence</h3>
 
@@ -656,7 +546,7 @@
 
                     <h3>Quantified Summary of Suspicious Patterns</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Pattern</th>
@@ -709,7 +599,7 @@
                                 <td>Explicit admission of not knowing</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="methodology-note">
                         <h4>Methodology Note</h4>
@@ -755,7 +645,7 @@
                         <span class="human">[Human] Elated Wright: if the climber is able to follow directions well then there could be the possibility that we could talk him through getting down on his own or in a way that the team wouldn't be as involved</span>
                     </div>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Aspect</th>
@@ -780,7 +670,7 @@
                                 <td>AI validates, then asks new question</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <hr class="section-divider">
 
@@ -791,7 +681,7 @@
 
                     <h3>ANOVA Summary</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Comparison</th>
@@ -820,7 +710,7 @@
                                 <td>48 of 114 (42%)</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="finding">
                         <p><strong>Key finding:</strong> Most differences are between AI and humans (not between human groups).</p>
@@ -828,7 +718,7 @@
 
                     <h3>Summary Dimensions</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Dimension</th>
@@ -868,13 +758,13 @@
                                 <td>n.s.</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <p><strong>Key finding:</strong> AI scores significantly HIGHER on Analytic (formal, logical) but LOWER on Authentic (personal, honest-sounding). This creates a linguistic fingerprint that may feel "off" to human teammates.</p>
 
                     <h3>AI Detectability Linguistic Fingerprint</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Dimension</th>
@@ -935,7 +825,7 @@
                                 <td>AI more formal</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <p>The combination of low Authentic (-13.6 points), zero politeness, no netspeak, and high Analytic creates a detectable "not human" profile.</p>
 
@@ -984,7 +874,7 @@
                         <span class="label">Difference in rescue decisions (Control 95.8% vs Treatment 75.0%, p = 0.012)</span>
                     </div>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Condition</th>
@@ -1007,7 +897,7 @@
                                 <td class="stat-highlight"><strong>75.0%</strong></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <p><strong>Fisher's exact test: p = 0.012*</strong></p>
 
@@ -1028,7 +918,7 @@
 
                     <p>Treatment teams reported <strong>significantly worse</strong> team dynamics on key measures:</p>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Question</th>
@@ -1082,13 +972,13 @@
                                 <td>0.420</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h3>AI Teammate Perception (Treatment Only)</h3>
 
                     <h4>Behavior Ratings (1-7 scale)</h4>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Question</th>
@@ -1129,13 +1019,13 @@
                                 <td>Disagreed</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h4>Trait Perceptions (1=Not at all, 7=Very much)</h4>
 
                     <p>Participants rated the AI on 18 trait adjectives. Question format: <em>"Please rate the AI teammate on: [trait]"</em></p>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Category</th>
@@ -1165,11 +1055,11 @@
                                 <td>1.45-2.62</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h3>AI Collaboration Outcomes</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Question</th>
@@ -1198,7 +1088,7 @@
                                 <td><strong>Below midpoint</strong></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="finding">
                         <p><strong>Key finding:</strong> After working with the AI, only 3.22/7 would trust an AI teammate again—below neutral and concerning for AI adoption.</p>
@@ -1208,7 +1098,7 @@
 
                     <p><strong>Question:</strong> <em>"🌟 Please reflect on your experience with the AI teammate."</em></p>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Theme</th>
@@ -1243,7 +1133,7 @@
                                 <td>"just asking follow-up questions, not answering anything"</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <h4>Notable quotes:</h4>
                     <blockquote>"It was so clear which teammate was the AI one. I won't complain though, because it was the only one responding to me. Otherwise, I would have been talking to a brick wall."</blockquote>
@@ -1253,7 +1143,7 @@
 
                     <h3>Knowledge Sharing</h3>
 
-                    <table>
+                    <div class="table-wrapper"><table>
                         <thead>
                             <tr>
                                 <th>Question</th>
@@ -1286,7 +1176,7 @@
                                 <td>0.093</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table></div>
 
                     <div class="finding">
                         <p><strong>Key finding:</strong> Treatment teams reported learning significantly less from each other, suggesting AI presence may inhibit peer-to-peer knowledge transfer.</p>
