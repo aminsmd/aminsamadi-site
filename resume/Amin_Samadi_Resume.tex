@@ -1,0 +1,122 @@
+% Amin Samadi — Resume
+% Compile with: tectonic Amin_Samadi_Resume.tex
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.65in]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{heading}{RGB}{70,100,160}
+\urlstyle{same}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\large\scshape\color{heading}}{}{0em}{}[\vspace{1pt}\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\setlist[itemize]{leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=3pt, label=\textbullet}
+
+% \entry{title}{dates}{subtitle}{location}
+\newcommand{\entry}[4]{%
+  \par\textbf{#1}\hfill\textbf{#2}\\
+  \textit{#3}\hfill\textit{#4}\par\vspace{1pt}}
+
+\newcommand{\sep}{\,$\cdot$\,}
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries Mohammad Amin Samadi}\\[3pt]
+  {\color{heading}Researcher: Learning Sciences, Human--AI Interaction \& Learning Analytics}\\[3pt]
+  San Francisco, CA \sep (714) 516-0001 \sep
+  \href{mailto:masamadi@uci.edu}{masamadi@uci.edu} \sep
+  \href{https://aminsamadi.org}{aminsamadi.org} \sep
+  \href{https://github.com/aminsmd}{github.com/aminsmd} \sep
+  \href{https://linkedin.com/in/aminsamadi}{linkedin.com/in/aminsamadi}
+\end{center}
+
+\section{Summary}
+
+Mixed-methods researcher studying how people learn and build capability with AI. PhD candidate in Education (HCI / Learning Analytics) at UC Irvine; dissertation on human--AI collaboration in teams. I build the instruments and platforms my research questions require: I designed and lead TRAIL, a controlled-study platform for human--AI teaming with randomized assignment, survey instrumentation, and automated data capture. I also ship production LLM systems (currently a Claude-based agent with full evaluation infrastructure at ROI-AI).
+
+\section{Education}
+
+\entry{Ph.D. Candidate, Education (HCI / Learning Analytics)}{2021 -- Present}
+  {University of California, Irvine. Advisor: Nia Nixon}{Irvine, CA}
+\begin{itemize}
+  \item Dissertation (in progress): human--AI collaboration in teams, built on the TRAIL platform.
+  \item UCI School of Education Vandell Dissertation Research Award; Best Short Paper Award, EDM 2025.
+\end{itemize}
+
+\entry{B.Sc., Computer Engineering}{2015 -- 2019}
+  {Isfahan University of Technology. Advisor: Mohammad Hossein Manshaei}{Isfahan, Iran}
+
+\section{Industry Experience}
+
+\entry{AI Scientist Intern}{Jan 2026 -- Present}
+  {ROI-AI (agentic systems for retail chargeback management)}{San Francisco, CA}
+\begin{itemize}
+  \item Built the core dispute-automation agent (Claude tool use) that processes a chargeback end-to-end (claim extraction, evidence gathering from ERP systems and email, verification against shipment records, dispute drafting), replacing a manual analyst workflow.
+  \item Stood up the evaluation and observability infrastructure that lets the team ship agent changes against production-sampled cases without disrupting live workflows.
+  \item Designed the root-cause analysis system that explains \emph{why} each chargeback happened, with interactive per-case reports analysts use to brief suppliers on prevention.
+  \item Researched GRPO and SFT post-training to distill the production agent's reasoning into smaller, deployable models.
+  \item Owned cross-cutting infrastructure: prompt caching, LLM cost tracking, queue-based workers, OCR ingestion, AWS deployment.
+\end{itemize}
+
+\entry{Research Intern}{Summer 2024}
+  {Lettercast.ai (AI-generated podcasts from long-form research)}{San Francisco, CA}
+\begin{itemize}
+  \item Designed an agentic workflow (CrewAI) converting arXiv papers into podcast scripts with multimodal LLMs, including a claim-verification stage to catch hallucinated content before audio synthesis.
+  \item Contributed to NSF SBIR and Llama 3.1 Impact Grant proposals on LLM output-verification benchmarks for responsible AI.
+\end{itemize}
+
+\section{Research Experience}
+
+\entry{TRAIL: Team Research and AI Integration Lab}{May 2023 -- Present}
+  {Lead researcher and engineer, Nixon Lab, UC Irvine}{Irvine, CA}
+\begin{itemize}
+  \item Designed and lead TRAIL, a research platform that embeds configurable LLM teammates into real-time, multi-party chatrooms for controlled studies of human--AI collaboration; deployed on AWS and used across multiple lab studies with 50+ concurrent participants.
+  \item Built the measurement toolkit the lab's studies run on: a self-hosted survey module, an A/B framework with randomized team assignment and automated data capture, RAG-grounded study materials, and collaborative experiment sharing with role-based permissions and version history.
+  \item Led qualitative coding of team discourse data: developed coding schemes, trained and managed coder teams, and established inter-rater reliability before analysis.
+  \item Designed and administered survey instruments for studies of team dynamics and perceptions of AI teammates.
+  \item Analyzed team interaction data with mixed-effects models, ANOVA, and psycholinguistic methods (LIWC, discourse analysis), linking team discourse dynamics to collaboration outcomes; complemented statistical findings with qualitative analysis of chat transcripts.
+  \item Publish public-facing research writeups of TRAIL studies at \href{https://aminsamadi.org/blog}{aminsamadi.org/blog}.
+  \item Architected the AI teammate as a multi-agent pipeline (hierarchical memory, Big-Five persona compiler, turn-taking rules calibrated against real chat data) with a simulation/replay tool for testing behavior changes against past experiments before deployment.
+  \item Managed a cross-disciplinary team of research interns and MSWE capstone developers.
+\end{itemize}
+
+\entry{Multimodal Classroom Video Understanding Pipeline}{Jan 2025 -- Dec 2025}
+  {\href{https://github.com/aminsmd/multimodal-transcription}{github.com/aminsmd/multimodal-transcription}, UC Irvine}{Irvine, CA}
+\begin{itemize}
+  \item Built an AI pipeline that transcribes and semantically segments classroom video to support research on teacher--student interaction quality; multimodal (audio + visual) transcription via Gemini 2.5 Pro, segmentation via temporal embedding similarity, deployed at scale on AWS ECS.
+  \item Led the design of a qualitative coding framework for teacher actions, then operationalized it in a multi-agent system that codes classroom video automatically.
+  \item Built a human-coded evaluation set from the framework and used it to validate the multi-agent system's coding against expert judgments. Work published in two 2026 papers (see Selected Publications).
+\end{itemize}
+
+\section{Skills}
+
+\textbf{Research methods:} mixed-methods research, experimental design, A/B testing, survey design, qualitative coding and inter-rater reliability, instrument development and validation, statistical modeling (mixed-effects models, ANOVA), psycholinguistic analysis (LIWC), discourse analysis, learning analytics, LLM evals and benchmark construction, UX research (HCI)
+
+\smallskip
+\textbf{ML \& LLMs:} AI agents and multi-agent systems, Claude Agent SDK workflows, tool use / function calling, RAG, memory systems, prompt engineering, prompt caching, post-training (SFT, GRPO), reward modeling, LLM observability, multimodal LLMs (Claude, Gemini, OpenAI, Qwen)
+
+\smallskip
+\textbf{Engineering:} Python, R, TypeScript, SQL; PyTorch, Hugging Face Transformers, TRL, LangChain, CrewAI; Django, Flask, FastAPI, Next.js/React, Socket.IO; AWS (ECS, Fargate, S3, Textract), Docker, Terraform, PostgreSQL, GitHub Actions
+
+\section{Selected Publications}
+
+\begin{itemize}
+  \item J. Choi, \textbf{M. A. Samadi}, S. Jaquay, S. Park, N. Nixon. ``Read the Room or Lead the Room: Understanding Socio-Cognitive Dynamics in Human-AI Teaming.'' \textit{Learning Analytics and Knowledge (LAK '26)}.
+  \item \textbf{M. A. Samadi}, N. Nixon. ``Personalities at Play: Probing Alignment in AI Teammates.'' Preprint, 2026.
+  \item J. Wu, L. Li, \textbf{M. A. Samadi}, et al. ``Validating High-Inference Pedagogical Constructs: Preliminary Evidence from a Multi-agent Architecture for Equity-Focused Mathematics.'' \textit{International Conference on Artificial Intelligence in Education (AIED '26)}.
+  \item L. Li, \textbf{M. A. Samadi}, J. Wu, et al. ``Automated Multimodal Transcription for Belonging-Centered Classroom Interaction Analysis: Opportunities and Challenges.'' \textit{International Conference on Artificial Intelligence in Education (AIED '26)}.
+  \item \textbf{M. A. Samadi}, S. JaQuay, J. Gu, N. Nixon. ``The AI Collaborator: Bridging Human-AI Interaction in Educational and Professional Settings.'' Preprint, \href{https://arxiv.org/abs/2405.10460}{arxiv.org/abs/2405.10460}.
+  \item \textbf{M. A. Samadi}, S. JaQuay, Y. Lin, E. Tajik, S. Park, N. Nixon. ``Minds and Machines Unite: Deciphering Team Social and Cognitive Dynamics with AI.'' \textit{Learning Analytics and Knowledge (LAK '24)}.
+  \item \textbf{M. A. Samadi}, D. Shariff, R. Ibarra, N. Nixon. ``Balancing the Scales: Using GPT-4 for Robust Data Augmentation.'' \textit{Companion Proceedings of LAK '25}.
+  \item S. Park, D. Shariff, \textbf{M. A. Samadi}, N. Nixon, S. D'Mello. ``From Discourse to Dynamics: Understanding Team Interactions Through Temporally Sensitive NLP.'' \textit{Educational Data Mining (EDM '25)}. \textbf{Best Short Paper Award.}
+  \item K. Karbasi, K. Hong, \textbf{M. A. Samadi}, G. Pottie. ``Multi-Agent Collaborative Framework for Math Problem Generation.'' \textit{Educational Data Mining (EDM '25)}.
+\end{itemize}
+
+\end{document}
