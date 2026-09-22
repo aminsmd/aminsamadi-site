@@ -39,7 +39,7 @@
 
 \section{Summary}
 
-Mixed-methods researcher studying how people learn and build capability with AI. PhD candidate in Education (HCI / Learning Analytics) at UC Irvine; dissertation on human--AI collaboration in teams. I build the instruments and platforms my research questions require: I designed and lead TRAIL, a controlled-study platform for human--AI teaming with randomized assignment, survey instrumentation, and automated data capture. I also ship production LLM systems (currently a Claude-based agent with full evaluation infrastructure at ROI-AI).
+Mixed-methods researcher studying how people learn and build capability with AI. PhD candidate in Education (HCI / Learning Analytics) at UC Irvine; dissertation on human--AI collaboration in teams. I build the instruments and platforms my research questions require: I designed and lead TRAIL, a controlled-study platform for human--AI teaming with randomized assignment, survey instrumentation, and automated data capture. I also ship production LLM systems (currently a Claude-based agent with full evaluation infrastructure at ROI-AI One).
 
 \section{Education}
 
@@ -56,20 +56,15 @@ Mixed-methods researcher studying how people learn and build capability with AI.
 \section{Industry Experience}
 
 \entry{AI Scientist Intern}{Jan 2026 -- Present}
-  {ROI-AI (agentic systems for retail chargeback management)}{San Francisco, CA}
+  {ROI-AI One (\href{https://roiaione.com/}{roiaione.com}) -- agentic systems for retail chargeback management}{San Francisco, CA}
 \begin{itemize}
-  \item Built the core dispute-automation agent (Claude tool use) that processes a chargeback end-to-end (claim extraction, evidence gathering from ERP systems and email, verification against shipment records, dispute drafting), replacing a manual analyst workflow.
-  \item Stood up the evaluation and observability infrastructure that lets the team ship agent changes against production-sampled cases without disrupting live workflows.
-  \item Designed the root-cause analysis system that explains \emph{why} each chargeback happened, with interactive per-case reports analysts use to brief suppliers on prevention.
-  \item Researched GRPO and SFT post-training to distill the production agent's reasoning into smaller, deployable models.
-  \item Owned cross-cutting infrastructure: prompt caching, LLM cost tracking, queue-based workers, OCR ingestion, AWS deployment.
-\end{itemize}
-
-\entry{Research Intern}{Summer 2024}
-  {Lettercast.ai (AI-generated podcasts from long-form research)}{San Francisco, CA}
-\begin{itemize}
-  \item Designed an agentic workflow (CrewAI) converting arXiv papers into podcast scripts with multimodal LLMs, including a claim-verification stage to catch hallucinated content before audio synthesis.
-  \item Contributed to NSF SBIR and Llama 3.1 Impact Grant proposals on LLM output-verification benchmarks for responsible AI.
+  \item Took the Root Cause Analysis tool from concept to production: a multi-agent workflow that ingests case documents, tracks findings in a live ledger, and determines why a chargeback occurred against industry standards; demoed by the CEO to customers.
+  \item Built an observability and eval system for agentic workflows: visualizes tool calls, thinking blocks, and agent dispatch, and scores agent performance across multiple methods to auto-flag regressions before production.
+  \item Built an email orchestration system that routes inbound messages to the correct workflow, then drafts and sends the outbound response, with every automated action gated behind a per-customer, per-action switch that ships off by default.
+  \item Built document intake and portal automation: OCR-based ingestion (AWS Textract + LLM tool-use) paired with automation that logs into retailer portals, imports documents, and submits response packets end-to-end across five retailer portals.
+  \item Built an auto-improvement backend that turns internal analyst feedback into a suggested fix, opened automatically as a pull request.
+  \item Built the pipeline that turns production agent traces into GRPO/SFT training data (context-window management, Hermes-formatted tool-call data) to distill the agent's reasoning into a smaller, deployable model (Qwen); ran initial training tests to validate the pipeline.
+  \item Migrated the team's instance infrastructure from a single Lightsail instance to EC2.
 \end{itemize}
 
 \section{Research Experience}
