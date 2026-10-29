@@ -1253,13 +1253,6 @@ footer .container > span {
     }
 }
 
-@media (max-width: 400px) {
-    /* The CV link is also in the hero and footer; drop it from the nav where there is no room. */
-    .nav-links a[href$=".pdf"] {
-        display: none;
-    }
-}
-
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
