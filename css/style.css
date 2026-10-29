@@ -1140,3 +1140,146 @@ body.loaded main {
 .hero-links a:hover::before {
     opacity: 0.2;
 }
+
+/* ------------------------------------------------------------------
+   Larger type, 2026 refresh: an oversized name, bigger body text,
+   and roomier cards. Overrides the sizes above.
+   ------------------------------------------------------------------ */
+
+body {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 760px;
+}
+
+.hero {
+    padding: 56px 0 72px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 2rem + 5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    margin-bottom: 18px;
+}
+
+.hero .tagline {
+    font-size: clamp(1.15rem, 1rem + 0.8vw, 1.4rem);
+    line-height: 1.45;
+    max-width: 36ch;
+    text-wrap: balance;
+    margin-bottom: 32px;
+}
+
+.hero-links a {
+    font-size: 15px;
+}
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+}
+
+.about-intro {
+    font-size: 19px;
+    line-height: 1.55;
+    margin-bottom: 44px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+h2 {
+    font-size: 13px;
+    margin-bottom: 16px;
+}
+
+.research-section {
+    padding: 22px 26px;
+    margin-bottom: 14px;
+}
+
+.research-section h3 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-bottom: 6px;
+}
+
+.research-section h3 .when {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.research-section p {
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.research-section a {
+    color: var(--accent);
+}
+
+.pub-list li {
+    padding: 16px 20px;
+}
+
+.pub-title {
+    font-size: 16px;
+}
+
+.pub-venue {
+    font-size: 12px;
+}
+
+.more-link {
+    margin-top: 16px;
+    font-size: 15px;
+}
+
+.more-link a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.more-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 2.75rem;
+    }
+
+    .about-intro {
+        font-size: 17px;
+    }
+
+    .research-section {
+        padding: 18px 20px;
+    }
+
+    .research-section h3 {
+        font-size: 18px;
+    }
+
+    .research-section p {
+        font-size: 15px;
+    }
+
+    .pub-title {
+        font-size: 15px;
+    }
+}
