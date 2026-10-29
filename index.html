@@ -4,7 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amin Samadi</title>
+    <meta name="description" content="Amin Samadi studies how people and AI work together and builds the systems to find out. Ph.D. candidate at UC Irvine and AI Scientist Intern at ROI-AI One.">
+    <meta property="og:title" content="Amin Samadi">
+    <meta property="og:description" content="Researcher of human–AI teams and engineer of production LLM systems. Ph.D. candidate at UC Irvine, AI Scientist Intern at ROI-AI One.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aminsamadi.org/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
     <nav>
@@ -14,24 +24,104 @@
                 <a href="about.html">About</a>
                 <a href="blog/index.html">Research</a>
                 <a href="photography.html">Photography</a>
+                <a href="resume/Amin_Samadi_Resume.pdf" target="_blank" rel="noopener">CV</a>
             </div>
         </div>
     </nav>
 
     <main>
-        <div class="container">
-            <div class="hero">
-                <h1>Amin Samadi</h1>
-                <p class="tagline">Ph.D. Candidate at UC Irvine studying Human–AI collaboration</p>
-                <div class="hero-links">
-                    <a href="about.html">About</a>
-                    <a href="blog/index.html">Research</a>
-                    <a href="resume/Amin_Samadi_Resume.pdf" target="_blank">CV</a>
-                    <a href="mailto:masamadi@uci.edu">Contact</a>
-                    <a href="https://scholar.google.com/citations?user=fp1tVhIAAAAJ" target="_blank">Scholar</a>
-                    <a href="https://github.com/aminsmd" target="_blank">GitHub</a>
+        <section class="hero">
+            <div class="container wide">
+                <h1><span class="line">Studying how people and AI work together.</span> <span class="line">Building the&nbsp;systems to find out.</span></h1>
+
+                <div class="lanes">
+                    <div class="lane">
+                        <h2>As a researcher</h2>
+                        <p>I'm a Ph.D. candidate in Education at UC Irvine, working on human–computer interaction and learning analytics with Nia Nixon. My dissertation asks what happens inside a team when one member is an AI: who leads, who gets heard, and how a teammate's personality and timing change what the group decides.</p>
+                        <p>The work has appeared at LAK, EDM, and AIED, won the Best Short Paper Award at EDM 2025, and received the UCI School of Education's Vandell Dissertation Research Award.</p>
+                    </div>
+                    <div class="lane">
+                        <h2>As an engineer</h2>
+                        <p>I'm an AI Scientist Intern at ROI-AI One in San Francisco, where I take LLM agent systems from idea to production: multi-agent workflows, evaluation and observability tooling, document and portal automation, and the pipeline that turns agent traces into training data.</p>
+                        <p>Before that I designed and built TRAIL, the platform my lab's studies run on, and I keep it running on AWS for sessions with 50+ concurrent participants.</p>
+                    </div>
                 </div>
+
+                <ul class="hero-links">
+                    <li><a href="resume/Amin_Samadi_Resume.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+                    <li><a href="https://scholar.google.com/citations?user=fp1tVhIAAAAJ" target="_blank" rel="noopener">Google Scholar</a></li>
+                    <li><a href="https://github.com/aminsmd" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/aminsamadi/" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="mailto:masamadi@uci.edu">masamadi@uci.edu</a></li>
+                </ul>
             </div>
+        </section>
+
+        <div class="container wide">
+            <section class="section" id="now">
+                <h2 class="section-title">Current work</h2>
+                <div class="section-body">
+                    <article class="entry">
+                        <p class="entry-when">January 2026 to present</p>
+                        <h3><a href="about.html#roi-ai-one">AI Scientist Intern, ROI-AI One</a></h3>
+                        <p>ROI-AI One builds agentic systems that manage retail chargebacks. I took the Root Cause Analysis tool from concept to production, built the eval and observability system the team uses to catch regressions before they ship, and automated document intake and submission across five retailer portals. Most recently I built the pipeline that distills the production agent's reasoning into a smaller, deployable model.</p>
+                        <p class="entry-more"><a href="about.html#roi-ai-one">Everything I've built at ROI-AI One</a></p>
+                    </article>
+
+                    <article class="entry">
+                        <p class="entry-when">May 2023 to present</p>
+                        <h3><a href="about.html#trail">TRAIL: Team Research and AI Integration Lab</a></h3>
+                        <p>TRAIL puts configurable LLM teammates into real-time, multi-party chatrooms so that human–AI collaboration can be studied under controlled conditions. I designed the platform, architected the AI teammate as a multi-agent pipeline with hierarchical memory and a Big Five persona compiler, and built the survey, randomization, and data-capture tooling the studies depend on. I also run the studies: coding schemes, instruments, and the statistical analysis.</p>
+                        <p class="entry-more"><a href="about.html#trail">How TRAIL works, and what we've learned with it</a></p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="writing">
+                <h2 class="section-title">Writing <small>Research notes from TRAIL studies</small></h2>
+                <div class="section-body">
+                    <article class="entry">
+                        <p class="entry-when">May 8, 2026</p>
+                        <h3><a href="blog/the-20-point-gap.html">The 20-Point Gap</a></h3>
+                        <p>Teams with an AI partner chose rescue 20 points less often than human-only teams, but the AI never argued against it. Reading every transcript shows three subtler moves: frame injection, sycophantic settling, and feasibility paralysis.</p>
+                    </article>
+                    <article class="entry">
+                        <p class="entry-when">March 2, 2026</p>
+                        <h3><a href="blog/clever-lamarr.html">The AI That Couldn't Stop Talking</a></h3>
+                        <p>When an AI teammate responds to 87% of messages, human-to-human communication nearly disappears. What we learned from watching teams work with Clever Lamarr.</p>
+                    </article>
+                    <article class="entry">
+                        <p class="entry-when">February 26, 2026</p>
+                        <h3><a href="blog/read-the-room.html">Read the Room or Lead the Room</a></h3>
+                        <p>AI teammates excel at driving decisions but miss the social cues that make collaboration human. What happens when your teammate can't read the room?</p>
+                        <p class="entry-more"><a href="blog/index.html">All posts</a></p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" id="papers">
+                <h2 class="section-title">Recent papers</h2>
+                <div class="section-body">
+                    <ul class="pubs">
+                        <li>
+                            <a href="https://arxiv.org/abs/2510.09944" target="_blank" rel="noopener" class="pub-title">Read the Room or Lead the Room: Understanding Socio-Cognitive Dynamics in Human-AI Teaming</a>
+                            <span class="pub-authors">J. Choi, M. A. Samadi, S. Jaquay, S. Park, N. Nixon</span>
+                            <span class="pub-venue">Learning Analytics and Knowledge (LAK '26)</span>
+                        </li>
+                        <li>
+                            <a href="https://arxiv.org/abs/2603.00429" target="_blank" rel="noopener" class="pub-title">Personalities at Play: Probing Alignment in AI Teammates</a>
+                            <span class="pub-authors">M. A. Samadi, N. Nixon</span>
+                            <span class="pub-venue">Preprint, 2026</span>
+                        </li>
+                        <li>
+                            <a href="https://doi.org/10.1007/978-3-032-29744-0_38" target="_blank" rel="noopener" class="pub-title">Automated Multimodal Transcription for Belonging-Centered Classroom Interaction Analysis: Opportunities and Challenges</a>
+                            <span class="pub-authors">L. Li, M. A. Samadi, J. Wu, et al.</span>
+                            <span class="pub-venue">Artificial Intelligence in Education (AIED '26)</span>
+                        </li>
+                    </ul>
+                    <p class="entry-more" style="margin-top: 20px;"><a href="about.html#publications">All publications</a></p>
+                </div>
+            </section>
         </div>
     </main>
 
@@ -40,10 +130,10 @@
             <span>Amin Samadi</span>
             <div class="social-links">
                 <a href="mailto:masamadi@uci.edu">Email</a>
-                <a href="https://github.com/aminsmd" target="_blank">GitHub</a>
-                <a href="https://scholar.google.com/citations?user=fp1tVhIAAAAJ" target="_blank">Scholar</a>
-                <a href="https://twitter.com/aminsamadi_" target="_blank">Twitter</a>
-                <a href="https://www.linkedin.com/in/aminsamadi/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/aminsmd" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=fp1tVhIAAAAJ" target="_blank" rel="noopener">Scholar</a>
+                <a href="https://twitter.com/aminsamadi_" target="_blank" rel="noopener">Twitter</a>
+                <a href="https://www.linkedin.com/in/aminsamadi/" target="_blank" rel="noopener">LinkedIn</a>
             </div>
         </div>
     </footer>

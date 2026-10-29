@@ -1,60 +1,20 @@
-// Smooth scroll animations on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Add loaded class to body for initial animations
-    document.body.classList.add('loaded');
+// Theme toggle, image lightbox, and a reading-progress bar on posts.
+// The initial theme is applied by an inline script in each page's <head>
+// so dark mode does not flash light on load.
 
-    // Initialize all features
-    initScrollAnimations();
-    initDarkMode();
+document.addEventListener('DOMContentLoaded', () => {
+    initThemeToggle();
     initImageLightbox();
-    initNavHighlight();
-    initSmoothScroll();
+    initReadingProgress();
 });
 
-// Scroll-triggered animations
-function initScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements that should animate
-    const animateElements = document.querySelectorAll(
-        '.research-section, .pub-list li, .post-item, .callout, .finding, .takeaways, blockquote, .photo-grid img'
-    );
-
-    animateElements.forEach((el, index) => {
-        el.style.transitionDelay = `${index * 0.05}s`;
-        el.classList.add('animate-ready');
-        observer.observe(el);
-    });
-}
-
-// Dark mode toggle
-function initDarkMode() {
-    // Check for saved preference or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-
-    // Create toggle button
+function initThemeToggle() {
     const toggle = document.createElement('button');
     toggle.className = 'theme-toggle';
+    toggle.type = 'button';
     toggle.setAttribute('aria-label', 'Toggle dark mode');
     toggle.innerHTML = `
-        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -65,38 +25,36 @@ function initDarkMode() {
             <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
         </svg>
-        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
     `;
 
-    // Add to nav
     const navContainer = document.querySelector('nav .container');
     if (navContainer) {
         navContainer.appendChild(toggle);
     }
 
-    // Toggle handler
     toggle.addEventListener('click', () => {
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-        localStorage.setItem('theme', isDark ? 'light' : 'dark');
-
-        // Add animation class
-        toggle.classList.add('rotating');
-        setTimeout(() => toggle.classList.remove('rotating'), 300);
+        const next = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try {
+            localStorage.setItem('theme', next);
+        } catch (e) {
+            // Storage unavailable (private mode, blocked); the toggle still works for this page.
+        }
     });
 }
 
-// Image lightbox for photography and blog images
 function initImageLightbox() {
     const images = document.querySelectorAll('.photo-grid img, .post-content img');
-
     if (images.length === 0) return;
 
-    // Create lightbox element
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
     lightbox.innerHTML = `
         <button class="lightbox-close" aria-label="Close">&times;</button>
         <img src="" alt="">
@@ -107,104 +65,50 @@ function initImageLightbox() {
     const lightboxImg = lightbox.querySelector('img');
     const lightboxCaption = lightbox.querySelector('.lightbox-caption');
 
+    const close = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
     images.forEach(img => {
         img.style.cursor = 'zoom-in';
         img.addEventListener('click', () => {
             lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt || '';
             lightboxCaption.textContent = img.alt || '';
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
     });
 
-    // Close handlers
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
+            close();
         }
     });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
+            close();
         }
     });
 }
 
-// Highlight active nav section on scroll
-function initNavHighlight() {
-    const sections = document.querySelectorAll('main section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
+function initReadingProgress() {
+    // Only long-form posts get the bar.
+    if (!document.querySelector('article .post-content')) return;
 
-    if (sections.length === 0) return;
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (scrollY >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Add scroll progress indicator
     const progress = document.createElement('div');
     progress.className = 'scroll-progress';
+    progress.setAttribute('aria-hidden', 'true');
     document.body.appendChild(progress);
 
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
+    const update = () => {
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        progress.style.width = `${scrollPercent}%`;
-    });
-}
-
-// Smooth scroll for anchor links
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-}
-
-// Add typing effect for hero (optional enhancement)
-function initTypingEffect() {
-    const heroTitle = document.querySelector('.hero h1');
-    if (!heroTitle) return;
-
-    const text = heroTitle.textContent;
-    heroTitle.textContent = '';
-    heroTitle.style.borderRight = '2px solid var(--accent)';
-
-    let i = 0;
-    const typeWriter = () => {
-        if (i < text.length) {
-            heroTitle.textContent += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        } else {
-            heroTitle.style.borderRight = 'none';
-        }
+        const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        progress.style.width = `${Math.min(100, Math.max(0, pct))}%`;
     };
 
-    setTimeout(typeWriter, 500);
+    window.addEventListener('scroll', update, { passive: true });
+    update();
 }
