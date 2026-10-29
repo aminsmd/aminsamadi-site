@@ -34,8 +34,8 @@
                 <img src="images/profile.jpg" alt="Amin Samadi in doctoral regalia" class="portrait">
                 <div>
                     <h1>AI engineer with a Ph.D. in how people and AI work together.</h1>
-                    <p>I build agentic AI systems: multi-agent orchestration, context engineering, tool calling and MCP integrations, GraphRAG with long-term agent memory, evals and observability, and post-training experiments with SFT and GRPO, delivered end to end as FastAPI, Django, and Next.js services on AWS. I completed my Ph.D. in Education (HCI and Learning Analytics) at UC Irvine in October 2026, in the Language and Learning Analytics Lab under Nia Nixon.</p>
-                    <p>The research and the engineering feed each other. Studying AI teammates meant having a chatroom where an AI could join a team under controlled conditions, so I built TRAIL. Shipping an agent at ROIAI One meant knowing whether it had gotten worse overnight, so I built the tracing and eval tooling. This page covers both sides.</p>
+                    <p>I build agentic AI systems, from multi-agent orchestration and memory to evals and post-training. I completed my Ph.D. in Education at UC Irvine in October 2026, advised by Nia Nixon.</p>
+                    <p>The two sides feed each other. To study AI teammates I built TRAIL. To ship agents at ROIAI One I built the eval tooling.</p>
                 </div>
             </header>
 
@@ -57,16 +57,12 @@
                         <p class="entry-when">January to September 2026</p>
                         <h3>AI Scientist Intern, ROIAI One <span class="tag">Engineering</span></h3>
                         <p class="where"><a href="https://roiaione.com/" target="_blank" rel="noopener">roiaione.com</a>, San Francisco. Agentic AI for B2B financial claims.</p>
-                        <p>When a retailer deducts money from a supplier's invoice, someone has to work out whether the deduction is valid, dispute it if not, and stop it from happening again. ROIAI One builds agents that do that work. I was the team's AI scientist and worked across the stack, from agent design to the infrastructure it runs on. What I built:</p>
                         <ul class="built">
-                            <li><strong>Root cause analysis workflow.</strong> A multi-agent system using GraphRAG and long-term agent memory (key-value state plus free-form notes) that determines who is at fault for a claim and how to prevent it, grounded in policy documents and domain-expert knowledge. The founder demoed it to customers, and it led to a paid pilot.</li>
-                            <li><strong>Core dispute-automation agent.</strong> The original agent that processes a chargeback end to end: claim extraction, evidence gathering from ERP systems and email, verification against shipment records, and dispute-email drafting. It replaced a manual analyst workflow. I maintained its skills and agent configuration after the move to a Claude Agent SDK flow.</li>
-                            <li><strong>Agent observability and evals.</strong> A tracing system that visualizes tool calls, thinking blocks, and agent dispatch across multi-agent workflows, and an eval dashboard that scores agent performance across multiple methods.</li>
-                            <li><strong>Portal automation.</strong> Logs into retailer portals, imports documents, and submits response packets, across five retailer portals.</li>
-                            <li><strong>Self-improvement loop (prototype).</strong> Turns internal analyst feedback into a suggested fix, opened automatically as a pull request.</li>
-                            <li><strong>Agentic post-training pipeline (prototype).</strong> Converts agent traces into GRPO and SFT data, with context-window management and Hermes-formatted tool-call trajectories, to distill the agent's reasoning into a small Qwen model. Ran the initial training experiments.</li>
-                            <li><strong>Infrastructure.</strong> Prompt caching, LLM cost tracking, queue-based workers, and the migration from a single Lightsail instance to EC2.</li>
-                            <li><strong>Customers.</strong> Onboarded four customer accounts and ran their weekly meetings: status updates, action items, and issue follow-up.</li>
+                            <li><strong>Root cause analysis agent.</strong> A multi-agent system with GraphRAG and long-term memory that finds who is at fault for a claim. It led to a paid pilot.</li>
+                            <li><strong>Dispute automation.</strong> The original agent that handles a chargeback end to end, replacing a manual analyst workflow.</li>
+                            <li><strong>Evals and observability.</strong> Agent tracing and an eval dashboard for multi-agent workflows.</li>
+                            <li><strong>Automation and infrastructure.</strong> Retailer portal automation, prompt caching, cost tracking, and an EC2 migration.</li>
+                            <li><strong>Prototypes.</strong> A feedback-to-pull-request loop and a pipeline that distills agent traces into a small model.</li>
                         </ul>
                     </article>
 
@@ -74,26 +70,12 @@
                         <p class="entry-when">May 2023 to present</p>
                         <h3>TRAIL: Team Research and AI Integration Lab <span class="tag">Research and engineering</span></h3>
                         <p class="where">Lead engineer and researcher, UC Irvine. <a href="https://trail.aminsamadi.org" target="_blank" rel="noopener">trail.aminsamadi.org</a></p>
-                        <p>TRAIL is a real-time, multi-party chat platform that embeds configurable LLM teammates, built so that human–AI collaboration can be studied under controlled conditions. Teams of participants work through a problem together, and one teammate may be an AI whose persona and behavior we set. I designed it, lead its engineering and its studies, and manage a cross-disciplinary team of research interns and MSWE capstone developers.</p>
-
-                        <h4>The platform</h4>
+                        <p>A real-time chat platform that puts configurable LLM teammates into human teams, so human–AI collaboration can be studied under controlled conditions. I designed it and lead its engineering and studies.</p>
                         <ul class="built">
-                            <li><strong>Stack.</strong> Django, Flask-SocketIO, Next.js and React, PostgreSQL, Redis, and Docker with AWS CI/CD, load-tested for 50+ concurrent participants.</li>
-                            <li><strong>The AI teammate</strong> is a four-stage agent pipeline: message batching, memory integration, a speak-or-stay-silent decision, and persona-aligned generation with graded Big Five personas, using multi-provider models through the OpenAI and Gemini APIs.</li>
-                            <li><strong>Memory and retrieval.</strong> Two-tier agent memory, short-term context plus long-term reflective summaries that re-anchor generation to counter persona drift, and RAG over attached documents with logged retrieval.</li>
-                            <li><strong>Simulation and replay.</strong> A tool that tests prompt and behavior changes against past experiments before deployment.</li>
-                            <li><strong>Reliability.</strong> An explicit lifecycle state machine with restart recovery, role-based access, and consent tracking.</li>
-                            <li><strong>Experiment infrastructure.</strong> Seeded randomized assignment, chained multi-session studies, per-message decision-trace export, and a separate analytics microservice that measures mimicry, turn-taking balance, and participation inequality.</li>
+                            <li><strong>AI teammate.</strong> An agent pipeline that decides when to speak, with Big Five personas and two-tier memory.</li>
+                            <li><strong>Platform.</strong> Django, Next.js, and PostgreSQL on AWS, load-tested for 50+ participants, with a replay tool for testing changes.</li>
+                            <li><strong>Studies.</strong> A six-session classroom study, a pilot trial of human-only versus human–AI teams, and a persona-fidelity evaluation across four models.</li>
                         </ul>
-
-                        <h4>The studies</h4>
-                        <ul class="built">
-                            <li><strong>Classroom deployment.</strong> A six-session classroom study with about 51 students and 4,495 messages, in which the agent contributed roughly 30% of messages without dominating the conversation.</li>
-                            <li><strong>Pilot RCT.</strong> Human-only versus human–AI teams, which surfaced differences in inclusivity, peer learning, and trust.</li>
-                            <li><strong>Persona fidelity.</strong> Evaluated GPT-4o, Claude 3.7 Sonnet, Gemini 2.5 Pro, and Grok-3 with a standard personality inventory over 32 trait configurations, plus linguistic analysis of dialogue and memory. Agent memory amplified trait signals (preprint, 2026).</li>
-                        </ul>
-
-                        <h4>Writeups from TRAIL studies</h4>
                         <ul class="inline-list">
                             <li><a href="blog/read-the-room.html">Read the Room or Lead the Room</a></li>
                             <li><a href="blog/personalities-at-play.html">Personalities at Play</a></li>
@@ -106,12 +88,7 @@
                         <p class="entry-when">January to December 2025</p>
                         <h3>Multimodal video understanding pipeline <span class="tag">Research and engineering</span></h3>
                         <p class="where">UC Irvine. <a href="https://github.com/aminsmd/multimodal-transcription" target="_blank" rel="noopener">github.com/aminsmd/multimodal-transcription</a></p>
-                        <p>A Gemini 2.5 Pro multimodal transcription pipeline for classroom video, so that education researchers can analyze classroom interaction at scale: video chunking, structured prompts for verbatim speech, speaker roles, and visual events, transcript merging, and automated validation. Deployed to AWS ECS Fargate with GitHub Actions CI/CD, Terraform-managed stage and prod environments, and S3 outputs.</p>
-                        <ul class="built">
-                            <li><strong>Benchmarks.</strong> Compared against Whisper, GPT-4o-Transcribe, and an audio-only Gemini ablation on 17 middle-school math videos (about 8 hours) and 30 public ClassBank videos (about 6 hours). On the math classrooms it had the lowest word error rate (0.14 vs. 0.29, 0.30, and 0.16) and under 2.5% speaker, content, and boundary errors, where GPT-4o misattributed 11.9% and omitted 22% of utterances. Whisper remained best on the ClassBank set (WER 0.26 vs. 0.39).</li>
-                            <li><strong>Evaluation.</strong> Designed and led the human-rated benchmark process (evaluation plan, video and segment sampling strategy); the qualitative coding itself was done by trained education researchers.</li>
-                            <li><strong>Multi-agent coder.</strong> Turned a teaching-practice observation rubric into a multi-agent coder and scorer (event extraction, coding, scoring), evaluated on 82 human-coded segments: visual context raised precision from 0.79 to 0.85 and cut false positives from 17.3% to 12.9%. Co-first author on one AIED 2026 paper and a contributor to a second.</li>
-                        </ul>
+                        <p>A Gemini-based pipeline that transcribes classroom video for education research, deployed on AWS. It beat Whisper and GPT-4o on math classrooms, and a multi-agent coder built on it became an AIED 2026 paper.</p>
                     </article>
                 </div>
             </section>
