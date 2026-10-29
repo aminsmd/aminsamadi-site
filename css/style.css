@@ -1283,3 +1283,39 @@ h2 {
         font-size: 15px;
     }
 }
+
+/* Research focus: two main areas, each with a short list of sub-topics */
+.focus-list {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.focus-list li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+}
+
+.focus-list li:last-child {
+    margin-bottom: 0;
+}
+
+.focus-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+@media (max-width: 600px) {
+    .focus-list li {
+        font-size: 15px;
+    }
+}
